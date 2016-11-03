@@ -77,7 +77,7 @@ flyway {
       driver = 'org.mariadb.jdbc.Driver'
       url = 'jdbc:mysql://localhost:3306/uaa'
       user = 'root'
-      password = 'changeme'
+      password = 'gli123456'
       schemas = ['uaa']
       break
     case 'postgresql':
@@ -263,7 +263,7 @@ project.gradle.taskGraph.whenReady { TaskExecutionGraph graph ->
 
     local {
 //      jvmArgs = "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"
-
+      timeout = 1200000
       systemProperties {
           //property 'uaa.allowUnverifiedUsers', 'false'
           property 'smtp.host', 'localhost'
