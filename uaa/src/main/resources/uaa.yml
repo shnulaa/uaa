@@ -190,6 +190,83 @@ oauth:
       - user_attributes
       - uaa.offline_token
 
+jwt:
+  token:
+    verification-key: |
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3CrCpfQ2HshRVWOaKdfa
+      1Bk95zl7+GUQx/FASV5r+8AGIDzKEANYcgxLCIVMks1NFiAEzgNVOGCFohTUSogR
+      M3iRpnlOzSyQ+w3daJLXBWN28snYdnmMlE5Pf6FKLMkZHc+jVNnNZw3U42Z10nLq
+      ghdhuz0waIL96zXRVML2H9x3egswJOCgbPcplq/JmY+2NKeczS3Q2giVLI5xzzBD
+      tqT0HQq3sNrB/2VQSxU8py5SeZPdhv4OkyYwak5Y4QueUu9arDNlth9wwDX9hCSK
+      ekUMqLOxrTtUkT2XC38OHv/j49fj/1zXHCtiZDJDz4wz+Qc9EkP8aqSH18Hz2DkO
+      hwIDAQAB
+      -----END PUBLIC KEY-----
+    signing-key: |
+      -----BEGIN RSA PRIVATE KEY-----
+      MIIEogIBAAKCAQEA3CrCpfQ2HshRVWOaKdfa1Bk95zl7+GUQx/FASV5r+8AGIDzK
+      EANYcgxLCIVMks1NFiAEzgNVOGCFohTUSogRM3iRpnlOzSyQ+w3daJLXBWN28snY
+      dnmMlE5Pf6FKLMkZHc+jVNnNZw3U42Z10nLqghdhuz0waIL96zXRVML2H9x3egsw
+      JOCgbPcplq/JmY+2NKeczS3Q2giVLI5xzzBDtqT0HQq3sNrB/2VQSxU8py5SeZPd
+      hv4OkyYwak5Y4QueUu9arDNlth9wwDX9hCSKekUMqLOxrTtUkT2XC38OHv/j49fj
+      /1zXHCtiZDJDz4wz+Qc9EkP8aqSH18Hz2DkOhwIDAQABAoIBAELLqlBE/iJqrdpV
+      JJFrTpWortI263iZ2PSAKfvYbLRtNq6TIs6m5S98sUr9fhTPuoJq5mpGMpWvGvvo
+      i9us2mMeQjoadaDj03yHYVP3sMqOuajBOi3/hHn+JDpZibJ6tGcJ9sioZ5vLY3o2
+      PKrDeIhNZbYzwzsB+t1gb4jiuV9CqLGgoy782lZwpbTF5vDqmwwCA5+v2XkmSh3Z
+      QpXcjVYYoqXKlpIuKBtDXoF2GgBq4uep3HWV94yoNVhGG5SjDxJrfsJZ5Nb5cq26
+      ONNjBBLYd69Xk2aESBw5+sZ9JUD7sULsUrLkHN4JOZg0PzIXdv88oAC1C6UmERqs
+      XqmIHOECgYEA+f0Ma0rIBkJwEJEKpIRiK7Yu7LmPznBaDoFbK7nuMWnK06Hf76p4
+      pgIl6asBHR9ThyCeGnzGQ5ACF6gVnjkyT3OCrvg3fuYO9srpBSeOHX7kDV8Tjs2c
+      h93TyiDGofvvk5Oha4Gn3X4/KNMK89C6rqJfVF4r7KZB8T43udtDCPECgYEA4XYg
+      3YAIY1OMdwGopo8taadwnqW1F8KWwTlTe3MeDoGqv75LxrBaliHLaPvSAJ+L9F/C
+      3Tj5wgsCzRWOxtoUgze3VRe/FsmzQ3e0BGEfKyb3v100niQBVtiy9T/NMZDDHDLw
+      jLclaxkZibKN30SBCTy0QNtF4VyqTPGCywryTvcCgYBIy5MuOxx8FiSj7lh3B8W+
+      jNKlRHPH3Zeb2bc+yGnAIdpaPi0DkVSIot9/Z7hvTov4MVtYwzTIv8qcMOn6pRUt
+      ZamMYeNnJH7/Bp9MTPRpSmYGLsV3NBB8z++4UEsHKGHfS4IZ2CuVqAmkTbBGx2VV
+      LRstai7IPrG9Gi0IBf1DQQKBgHBcY7KfvQ5rM+SXMgqX7kTqSmj2IlMOCf2P6Tfr
+      vf3yxzq5xp/lga+ydeIDJbxjxubp1n5Th70ZqbK1XKtjQbfHS5mftP7RVIJ6JH/O
+      Oy9RQ0TeWXu6a+RxKHaq7kMWZvYluNYX7BD8uEp0btnnFPuagiaUYLYYbVLdRZaV
+      BP8vAoGAYyxRdTng27JyHxid56mICfLmf8vFrOz5pa4Btz3Bq/xtS9Q67SDOCC3T
+      7c05AFJ86LPHBcNiFJIijsZOKB3lQ4qNlqa2M5gixIvunga0lPigMtUJScMo2zJo
+      WhAFvWCIlWmM7W/xPmfamrBYAQgdspqWV1CNlVh37oWFszEJttY=
+      -----END RSA PRIVATE KEY-----
+    claims:
+      exclude:
+        - authorities
+    policy:
+      activeKeyId: key-id-1
+      keys:
+        key-id-1:
+          signingKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEogIBAAKCAQEA3CrCpfQ2HshRVWOaKdfa1Bk95zl7+GUQx/FASV5r+8AGIDzK
+            EANYcgxLCIVMks1NFiAEzgNVOGCFohTUSogRM3iRpnlOzSyQ+w3daJLXBWN28snY
+            dnmMlE5Pf6FKLMkZHc+jVNnNZw3U42Z10nLqghdhuz0waIL96zXRVML2H9x3egsw
+            JOCgbPcplq/JmY+2NKeczS3Q2giVLI5xzzBDtqT0HQq3sNrB/2VQSxU8py5SeZPd
+            hv4OkyYwak5Y4QueUu9arDNlth9wwDX9hCSKekUMqLOxrTtUkT2XC38OHv/j49fj
+            /1zXHCtiZDJDz4wz+Qc9EkP8aqSH18Hz2DkOhwIDAQABAoIBAELLqlBE/iJqrdpV
+            JJFrTpWortI263iZ2PSAKfvYbLRtNq6TIs6m5S98sUr9fhTPuoJq5mpGMpWvGvvo
+            i9us2mMeQjoadaDj03yHYVP3sMqOuajBOi3/hHn+JDpZibJ6tGcJ9sioZ5vLY3o2
+            PKrDeIhNZbYzwzsB+t1gb4jiuV9CqLGgoy782lZwpbTF5vDqmwwCA5+v2XkmSh3Z
+            QpXcjVYYoqXKlpIuKBtDXoF2GgBq4uep3HWV94yoNVhGG5SjDxJrfsJZ5Nb5cq26
+            ONNjBBLYd69Xk2aESBw5+sZ9JUD7sULsUrLkHN4JOZg0PzIXdv88oAC1C6UmERqs
+            XqmIHOECgYEA+f0Ma0rIBkJwEJEKpIRiK7Yu7LmPznBaDoFbK7nuMWnK06Hf76p4
+            pgIl6asBHR9ThyCeGnzGQ5ACF6gVnjkyT3OCrvg3fuYO9srpBSeOHX7kDV8Tjs2c
+            h93TyiDGofvvk5Oha4Gn3X4/KNMK89C6rqJfVF4r7KZB8T43udtDCPECgYEA4XYg
+            3YAIY1OMdwGopo8taadwnqW1F8KWwTlTe3MeDoGqv75LxrBaliHLaPvSAJ+L9F/C
+            3Tj5wgsCzRWOxtoUgze3VRe/FsmzQ3e0BGEfKyb3v100niQBVtiy9T/NMZDDHDLw
+            jLclaxkZibKN30SBCTy0QNtF4VyqTPGCywryTvcCgYBIy5MuOxx8FiSj7lh3B8W+
+            jNKlRHPH3Zeb2bc+yGnAIdpaPi0DkVSIot9/Z7hvTov4MVtYwzTIv8qcMOn6pRUt
+            ZamMYeNnJH7/Bp9MTPRpSmYGLsV3NBB8z++4UEsHKGHfS4IZ2CuVqAmkTbBGx2VV
+            LRstai7IPrG9Gi0IBf1DQQKBgHBcY7KfvQ5rM+SXMgqX7kTqSmj2IlMOCf2P6Tfr
+            vf3yxzq5xp/lga+ydeIDJbxjxubp1n5Th70ZqbK1XKtjQbfHS5mftP7RVIJ6JH/O
+            Oy9RQ0TeWXu6a+RxKHaq7kMWZvYluNYX7BD8uEp0btnnFPuagiaUYLYYbVLdRZaV
+            BP8vAoGAYyxRdTng27JyHxid56mICfLmf8vFrOz5pa4Btz3Bq/xtS9Q67SDOCC3T
+            7c05AFJ86LPHBcNiFJIijsZOKB3lQ4qNlqa2M5gixIvunga0lPigMtUJScMo2zJo
+            WhAFvWCIlWmM7W/xPmfamrBYAQgdspqWV1CNlVh37oWFszEJttY=
+            -----END RSA PRIVATE KEY-----
+
+
 # Default token signing key. Each installation MUST provide a unique key
 # in order for tokens to be usable only on that installation.
 #jwt:

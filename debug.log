@@ -20,8 +20,8 @@ Tasks to be executed: [task ':compileJava', task ':processResources', task ':cla
 file or directory '/home/ubuntu/projects/uaa/src/main/java', not found
 Skipping task ':compileJava' as it has no source files.
 :compileJava UP-TO-DATE
-:compileJava took 19ms
-:compileJava (Thread[main,5,main]) completed. Took 0.023 secs.
+:compileJava took 17ms
+:compileJava (Thread[main,5,main]) completed. Took 0.022 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
 file or directory '/home/ubuntu/projects/uaa/src/main/resources', not found
@@ -34,24 +34,24 @@ Skipping task ':processResources' as it has no source files.
 Skipping task ':classes' as it has no actions.
 :classes UP-TO-DATE
 :classes took 1ms
-:classes (Thread[main,5,main]) completed. Took 0.001 secs.
+:classes (Thread[main,5,main]) completed. Took 0.002 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Skipping task ':jar' as it is up-to-date (took 0.045 secs).
+Skipping task ':jar' as it is up-to-date (took 0.043 secs).
 :jar UP-TO-DATE
-:jar took 51ms
-:jar (Thread[main,5,main]) completed. Took 0.051 secs.
+:jar took 49ms
+:jar (Thread[main,5,main]) completed. Took 0.05 secs.
 :cloudfoundry-identity-model:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:compileJava
-Skipping task ':cloudfoundry-identity-model:compileJava' as it is up-to-date (took 0.177 secs).
+Skipping task ':cloudfoundry-identity-model:compileJava' as it is up-to-date (took 0.175 secs).
 :cloudfoundry-identity-model:compileJava UP-TO-DATE
 :cloudfoundry-identity-model:compileJava took 188ms
-:cloudfoundry-identity-model:compileJava (Thread[main,5,main]) completed. Took 0.188 secs.
+:cloudfoundry-identity-model:compileJava (Thread[main,5,main]) completed. Took 0.189 secs.
 :cloudfoundry-identity-model:mainOutputResourcesDir (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:mainOutputResourcesDir
 Skipping task ':cloudfoundry-identity-model:mainOutputResourcesDir' as it has no actions.
 :cloudfoundry-identity-model:mainOutputResourcesDir UP-TO-DATE
-:cloudfoundry-identity-model:mainOutputResourcesDir took 2ms
+:cloudfoundry-identity-model:mainOutputResourcesDir took 1ms
 :cloudfoundry-identity-model:mainOutputResourcesDir (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-model:buildInfo (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:buildInfo
@@ -67,32 +67,32 @@ Skipping task ':cloudfoundry-identity-model:gitInfo' as it has no actions.
 :cloudfoundry-identity-model:gitInfo (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-model:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:processResources
-Executing task ':cloudfoundry-identity-model:processResources' (up-to-date check took 0.005 secs) due to:
+Executing task ':cloudfoundry-identity-model:processResources' (up-to-date check took 0.006 secs) due to:
   Input file /home/ubuntu/projects/uaa/model/src/main/resources/git.properties has changed.
   Input file /home/ubuntu/projects/uaa/model/src/main/resources/build.properties has changed.
-:cloudfoundry-identity-model:processResources took 38ms
-:cloudfoundry-identity-model:processResources (Thread[main,5,main]) completed. Took 0.039 secs.
+:cloudfoundry-identity-model:processResources took 70ms
+:cloudfoundry-identity-model:processResources (Thread[main,5,main]) completed. Took 0.07 secs.
 :cloudfoundry-identity-model:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:classes
 Skipping task ':cloudfoundry-identity-model:classes' as it has no actions.
 :cloudfoundry-identity-model:classes took 1ms
-:cloudfoundry-identity-model:classes (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-model:classes (Thread[main,5,main]) completed. Took 0.005 secs.
 :cloudfoundry-identity-model:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:jar
-Executing task ':cloudfoundry-identity-model:jar' (up-to-date check took 0.018 secs) due to:
+Executing task ':cloudfoundry-identity-model:jar' (up-to-date check took 0.021 secs) due to:
   Input file /home/ubuntu/projects/uaa/model/build/resources/main/build.properties has changed.
   Input file /home/ubuntu/projects/uaa/model/build/resources/main/git.properties has changed.
-:cloudfoundry-identity-model:jar took 114ms
-:cloudfoundry-identity-model:jar (Thread[main,5,main]) completed. Took 0.114 secs.
+:cloudfoundry-identity-model:jar took 113ms
+:cloudfoundry-identity-model:jar (Thread[main,5,main]) completed. Took 0.113 secs.
 :cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:compileJava
 Executing task ':cloudfoundry-identity-client-lib:compileJava' (up-to-date check took 0.039 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
 Note: /home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-:cloudfoundry-identity-client-lib:compileJava took 905ms
-:cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) completed. Took 0.905 secs.
+:cloudfoundry-identity-client-lib:compileJava took 942ms
+:cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) completed. Took 0.943 secs.
 :cloudfoundry-identity-client-lib:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:processResources
 file or directory '/home/ubuntu/projects/uaa/client-lib/src/main/resources', not found
@@ -103,17 +103,17 @@ Skipping task ':cloudfoundry-identity-client-lib:processResources' as it has no 
 :cloudfoundry-identity-client-lib:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:classes
 Skipping task ':cloudfoundry-identity-client-lib:classes' as it has no actions.
-:cloudfoundry-identity-client-lib:classes took 0ms
+:cloudfoundry-identity-client-lib:classes took 1ms
 :cloudfoundry-identity-client-lib:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:jar
-Skipping task ':cloudfoundry-identity-client-lib:jar' as it is up-to-date (took 0.003 secs).
+Skipping task ':cloudfoundry-identity-client-lib:jar' as it is up-to-date (took 0.004 secs).
 :cloudfoundry-identity-client-lib:jar UP-TO-DATE
 :cloudfoundry-identity-client-lib:jar took 5ms
-:cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) completed. Took 0.005 secs.
+:cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) completed. Took 0.006 secs.
 :cloudfoundry-identity-model:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:javadoc
-Executing task ':cloudfoundry-identity-model:javadoc' (up-to-date check took 0.044 secs) due to:
+Executing task ':cloudfoundry-identity-model:javadoc' (up-to-date check took 0.04 secs) due to:
   Input file /home/ubuntu/projects/uaa/model/build/resources/main/build.properties has changed.
   Input file /home/ubuntu/projects/uaa/model/build/resources/main/git.properties has changed.
 Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/model Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/model/build/tmp/javadoc/javadoc.options
@@ -136,12 +136,12 @@ warning: unknown enum constant Inclusion.NON_DEFAULT
     public LockoutPolicy setCountFailuresWithin(int interval) {
                          ^
 6 warnings
-:cloudfoundry-identity-model:javadoc took 2983ms
-:cloudfoundry-identity-model:javadoc (Thread[main,5,main]) completed. Took 2.985 secs.
+:cloudfoundry-identity-model:javadoc took 2902ms
+:cloudfoundry-identity-model:javadoc (Thread[main,5,main]) completed. Took 2.903 secs.
 :cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:javadoc
 Executing task ':cloudfoundry-identity-client-lib:javadoc' (up-to-date check took 0.008 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/client-lib Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/client-lib/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
 /home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:107: warning: no @return
@@ -166,23 +166,23 @@ Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
      * @param authorizationCode
        ^
 7 warnings
-:cloudfoundry-identity-client-lib:javadoc took 1439ms
-:cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) completed. Took 1.439 secs.
+:cloudfoundry-identity-client-lib:javadoc took 1485ms
+:cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) completed. Took 1.486 secs.
 :cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:javadocJar
-Executing task ':cloudfoundry-identity-client-lib:javadocJar' (up-to-date check took 0.031 secs) due to:
+Executing task ':cloudfoundry-identity-client-lib:javadocJar' (up-to-date check took 0.004 secs) due to:
   Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/org/cloudfoundry/identity/client/token/package-summary.html has changed.
   Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/deprecated-list.html has changed.
   Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/org/cloudfoundry/identity/client/token/TokenRequest.html has changed.
-:cloudfoundry-identity-client-lib:javadocJar took 64ms
-:cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) completed. Took 0.065 secs.
+:cloudfoundry-identity-client-lib:javadocJar took 29ms
+:cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) completed. Took 0.03 secs.
 :cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:packageSources
 file or directory '/home/ubuntu/projects/uaa/client-lib/src/main/resources', not found
-Skipping task ':cloudfoundry-identity-client-lib:packageSources' as it is up-to-date (took 0.007 secs).
+Skipping task ':cloudfoundry-identity-client-lib:packageSources' as it is up-to-date (took 0.003 secs).
 :cloudfoundry-identity-client-lib:packageSources UP-TO-DATE
-:cloudfoundry-identity-client-lib:packageSources took 8ms
-:cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) completed. Took 0.008 secs.
+:cloudfoundry-identity-client-lib:packageSources took 5ms
+:cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) completed. Took 0.005 secs.
 :cloudfoundry-identity-client-lib:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:assemble
 Skipping task ':cloudfoundry-identity-client-lib:assemble' as it has no actions.
@@ -190,12 +190,12 @@ Skipping task ':cloudfoundry-identity-client-lib:assemble' as it has no actions.
 :cloudfoundry-identity-client-lib:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:javadocJar
-Executing task ':cloudfoundry-identity-model:javadocJar' (up-to-date check took 0.01 secs) due to:
+Executing task ':cloudfoundry-identity-model:javadocJar' (up-to-date check took 0.009 secs) due to:
   Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/invitations/InvitationsRequest.html has changed.
   Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/zone/BrandingInformationSource.html has changed.
   Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/scim/package-frame.html has changed.
 :cloudfoundry-identity-model:javadocJar took 148ms
-:cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) completed. Took 0.15 secs.
+:cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) completed. Took 0.148 secs.
 :cloudfoundry-identity-model:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:packageSources
 Executing task ':cloudfoundry-identity-model:packageSources' (up-to-date check took 0.006 secs) due to:
@@ -206,7 +206,7 @@ Executing task ':cloudfoundry-identity-model:packageSources' (up-to-date check t
 :cloudfoundry-identity-model:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:assemble
 Skipping task ':cloudfoundry-identity-model:assemble' as it has no actions.
-:cloudfoundry-identity-model:assemble took 1ms
+:cloudfoundry-identity-model:assemble took 0ms
 :cloudfoundry-identity-model:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:compileJava
@@ -226,35 +226,35 @@ Skipping task ':cloudfoundry-identity-samples:processResources' as it has no sou
 :cloudfoundry-identity-samples:classes
 Skipping task ':cloudfoundry-identity-samples:classes' as it has no actions.
 :cloudfoundry-identity-samples:classes UP-TO-DATE
-:cloudfoundry-identity-samples:classes took 0ms
+:cloudfoundry-identity-samples:classes took 1ms
 :cloudfoundry-identity-samples:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:jar
 Skipping task ':cloudfoundry-identity-samples:jar' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:jar UP-TO-DATE
-:cloudfoundry-identity-samples:jar took 3ms
-:cloudfoundry-identity-samples:jar (Thread[main,5,main]) completed. Took 0.003 secs.
+:cloudfoundry-identity-samples:jar took 4ms
+:cloudfoundry-identity-samples:jar (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:javadoc
 file or directory '/home/ubuntu/projects/uaa/samples/src/main/java', not found
 Skipping task ':cloudfoundry-identity-samples:javadoc' as it has no source files.
 :cloudfoundry-identity-samples:javadoc UP-TO-DATE
-:cloudfoundry-identity-samples:javadoc took 0ms
-:cloudfoundry-identity-samples:javadoc (Thread[main,5,main]) completed. Took 0.0 secs.
+:cloudfoundry-identity-samples:javadoc took 1ms
+:cloudfoundry-identity-samples:javadoc (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:javadocJar
 Skipping task ':cloudfoundry-identity-samples:javadocJar' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:javadocJar UP-TO-DATE
-:cloudfoundry-identity-samples:javadocJar took 2ms
-:cloudfoundry-identity-samples:javadocJar (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-samples:javadocJar took 3ms
+:cloudfoundry-identity-samples:javadocJar (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:packageSources
 file or directory '/home/ubuntu/projects/uaa/samples/src/main/resources', not found
 file or directory '/home/ubuntu/projects/uaa/samples/src/main/java', not found
 Skipping task ':cloudfoundry-identity-samples:packageSources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:packageSources UP-TO-DATE
-:cloudfoundry-identity-samples:packageSources took 3ms
-:cloudfoundry-identity-samples:packageSources (Thread[main,5,main]) completed. Took 0.003 secs.
+:cloudfoundry-identity-samples:packageSources took 4ms
+:cloudfoundry-identity-samples:packageSources (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:assemble
 Skipping task ':cloudfoundry-identity-samples:assemble' as it has no actions.
@@ -263,21 +263,21 @@ Skipping task ':cloudfoundry-identity-samples:assemble' as it has no actions.
 :cloudfoundry-identity-samples:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-server:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:compileJava
-Executing task ':cloudfoundry-identity-server:compileJava' (up-to-date check took 0.247 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-server:compileJava' (up-to-date check took 0.286 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-:cloudfoundry-identity-server:compileJava took 3988ms
-:cloudfoundry-identity-server:compileJava (Thread[main,5,main]) completed. Took 3.988 secs.
+:cloudfoundry-identity-server:compileJava took 3986ms
+:cloudfoundry-identity-server:compileJava (Thread[main,5,main]) completed. Took 3.987 secs.
 :cloudfoundry-identity-server:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:processResources
-Skipping task ':cloudfoundry-identity-server:processResources' as it is up-to-date (took 0.025 secs).
+Skipping task ':cloudfoundry-identity-server:processResources' as it is up-to-date (took 0.023 secs).
 :cloudfoundry-identity-server:processResources UP-TO-DATE
-:cloudfoundry-identity-server:processResources took 27ms
-:cloudfoundry-identity-server:processResources (Thread[main,5,main]) completed. Took 0.028 secs.
+:cloudfoundry-identity-server:processResources took 26ms
+:cloudfoundry-identity-server:processResources (Thread[main,5,main]) completed. Took 0.026 secs.
 :cloudfoundry-identity-server:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:classes
 Skipping task ':cloudfoundry-identity-server:classes' as it has no actions.
@@ -287,12 +287,12 @@ Skipping task ':cloudfoundry-identity-server:classes' as it has no actions.
 :cloudfoundry-identity-server:jar
 Skipping task ':cloudfoundry-identity-server:jar' as it is up-to-date (took 0.027 secs).
 :cloudfoundry-identity-server:jar UP-TO-DATE
-:cloudfoundry-identity-server:jar took 28ms
+:cloudfoundry-identity-server:jar took 29ms
 :cloudfoundry-identity-server:jar (Thread[main,5,main]) completed. Took 0.029 secs.
 :cloudfoundry-identity-server:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:javadoc
-Executing task ':cloudfoundry-identity-server:javadoc' (up-to-date check took 0.08 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-server:javadoc' (up-to-date check took 0.126 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/server Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/server/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
 warning: unknown enum constant Inclusion.NON_DEFAULT
@@ -595,19 +595,19 @@ warning: unknown enum constant Inclusion.NON_DEFAULT
      * @return
        ^
 100 warnings
-:cloudfoundry-identity-server:javadoc took 8744ms
-:cloudfoundry-identity-server:javadoc (Thread[main,5,main]) completed. Took 8.745 secs.
+:cloudfoundry-identity-server:javadoc took 7906ms
+:cloudfoundry-identity-server:javadoc (Thread[main,5,main]) completed. Took 7.906 secs.
 :cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:javadocJar
 Executing task ':cloudfoundry-identity-server:javadocJar' (up-to-date check took 0.019 secs) due to:
   Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/provider/oauth/OauthIdentityProviderDefinitionFactoryBean.html has changed.
   Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/account/package-tree.html has changed.
   Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/authentication/manager/ChainedAuthenticationManager.AuthenticationManagerConfiguration.html has changed.
-:cloudfoundry-identity-server:javadocJar took 514ms
-:cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) completed. Took 0.514 secs.
+:cloudfoundry-identity-server:javadocJar took 523ms
+:cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) completed. Took 0.523 secs.
 :cloudfoundry-identity-server:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:packageSources
-Skipping task ':cloudfoundry-identity-server:packageSources' as it is up-to-date (took 0.016 secs).
+Skipping task ':cloudfoundry-identity-server:packageSources' as it is up-to-date (took 0.017 secs).
 :cloudfoundry-identity-server:packageSources UP-TO-DATE
 :cloudfoundry-identity-server:packageSources took 17ms
 :cloudfoundry-identity-server:packageSources (Thread[main,5,main]) completed. Took 0.018 secs.
@@ -625,60 +625,61 @@ Skipping task ':cloudfoundry-identity-uaa:compileJava' as it has no source files
 :cloudfoundry-identity-uaa:compileJava (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:processResources
-Skipping task ':cloudfoundry-identity-uaa:processResources' as it is up-to-date (took 0.003 secs).
-:cloudfoundry-identity-uaa:processResources UP-TO-DATE
-:cloudfoundry-identity-uaa:processResources took 4ms
-:cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) completed. Took 0.006 secs.
+Executing task ':cloudfoundry-identity-uaa:processResources' (up-to-date check took 0.003 secs) due to:
+  Input file /home/ubuntu/projects/uaa/uaa/src/main/resources/uaa.yml has changed.
+:cloudfoundry-identity-uaa:processResources took 47ms
+:cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) completed. Took 0.048 secs.
 :cloudfoundry-identity-uaa:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:classes
 Skipping task ':cloudfoundry-identity-uaa:classes' as it has no actions.
-:cloudfoundry-identity-uaa:classes UP-TO-DATE
 :cloudfoundry-identity-uaa:classes took 0ms
-:cloudfoundry-identity-uaa:classes (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-uaa:classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-uaa:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:javadoc
 file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
 Skipping task ':cloudfoundry-identity-uaa:javadoc' as it has no source files.
 :cloudfoundry-identity-uaa:javadoc UP-TO-DATE
 :cloudfoundry-identity-uaa:javadoc took 1ms
-:cloudfoundry-identity-uaa:javadoc (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-uaa:javadoc (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:javadocJar
 Skipping task ':cloudfoundry-identity-uaa:javadocJar' as it is up-to-date (took 0.001 secs).
 :cloudfoundry-identity-uaa:javadocJar UP-TO-DATE
-:cloudfoundry-identity-uaa:javadocJar took 3ms
-:cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) completed. Took 0.003 secs.
+:cloudfoundry-identity-uaa:javadocJar took 2ms
+:cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:packageSources
 file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
-Skipping task ':cloudfoundry-identity-uaa:packageSources' as it is up-to-date (took 0.002 secs).
-:cloudfoundry-identity-uaa:packageSources UP-TO-DATE
-:cloudfoundry-identity-uaa:packageSources took 4ms
-:cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) completed. Took 0.004 secs.
+Executing task ':cloudfoundry-identity-uaa:packageSources' (up-to-date check took 0.002 secs) due to:
+  Input file /home/ubuntu/projects/uaa/uaa/src/main/resources/uaa.yml has changed.
+file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
+:cloudfoundry-identity-uaa:packageSources took 23ms
+:cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) completed. Took 0.023 secs.
 :cloudfoundry-identity-uaa:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:war
-Executing task ':cloudfoundry-identity-uaa:war' (up-to-date check took 0.016 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
-:cloudfoundry-identity-uaa:war took 3291ms
-:cloudfoundry-identity-uaa:war (Thread[main,5,main]) completed. Took 3.292 secs.
+Executing task ':cloudfoundry-identity-uaa:war' (up-to-date check took 0.017 secs) due to:
+  Input file /home/ubuntu/projects/uaa/uaa/build/resources/main/uaa.yml has changed.
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-uaa:war took 3644ms
+:cloudfoundry-identity-uaa:war (Thread[main,5,main]) completed. Took 3.645 secs.
 :cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:assemble
 Skipping task ':cloudfoundry-identity-uaa:assemble' as it has no actions.
 :cloudfoundry-identity-uaa:assemble took 0ms
-:cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava' (up-to-date check took 0.046 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava' (up-to-date check took 0.045 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava took 148ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) completed. Took 0.149 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava took 152ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) completed. Took 0.152 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources' as it is up-to-date (took 0.001 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources took 4ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) completed. Took 0.004 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources took 2ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:classes' as it has no actions.
@@ -686,44 +687,44 @@ Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:classes'
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc' (up-to-date check took 0.008 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc' (up-to-date check took 0.007 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/samples/api Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/samples/api/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc took 1691ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) completed. Took 1.691 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc took 1247ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) completed. Took 1.247 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar
 Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar' (up-to-date check took 0.002 secs) due to:
   Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/org/cloudfoundry/identity/api/web/package-summary.html has changed.
   Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/deprecated-list.html has changed.
   Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/allclasses-noframe.html has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar took 13ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) completed. Took 0.013 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar took 14ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) completed. Took 0.014 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources
-Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources' as it is up-to-date (took 0.001 secs).
+Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources UP-TO-DATE
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources took 3ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:war
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:war' (up-to-date check took 0.011 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:war took 2975ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) completed. Took 2.976 secs.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:war' (up-to-date check took 0.058 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:war took 3080ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) completed. Took 3.081 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble' as it has no actions.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble took 1ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble took 0ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava' (up-to-date check took 0.048 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava' (up-to-date check took 0.035 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava took 134ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) completed. Took 0.134 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava took 129ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) completed. Took 0.129 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources' as it is up-to-date (took 0.002 secs).
@@ -733,36 +734,36 @@ Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:processR
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:classes
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:classes' as it has no actions.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:classes took 1ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:classes (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:classes took 0ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc' (up-to-date check took 0.006 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc' (up-to-date check took 0.007 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/samples/app Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/samples/app/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc took 1222ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) completed. Took 1.223 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc took 1295ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) completed. Took 1.296 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar
 Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar' (up-to-date check took 0.002 secs) due to:
   Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/deprecated-list.html has changed.
   Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/constant-values.html has changed.
   Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/overview-tree.html has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar took 14ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar (Thread[main,5,main]) completed. Took 0.015 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar took 13ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar (Thread[main,5,main]) completed. Took 0.013 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources took 3ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources took 2ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:war
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:war' (up-to-date check took 0.01 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.0.jar has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:war took 3428ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) completed. Took 3.428 secs.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:war' (up-to-date check took 0.009 secs) due to:
+  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:war took 4032ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) completed. Took 4.033 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble' as it has no actions.
@@ -771,58 +772,27 @@ Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
-:assemble took 1ms
-:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
+:assemble took 0ms
+:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
 :cleanCargoConfDir (Thread[main,5,main]) started.
 :cleanCargoConfDir
 Skipping task ':cleanCargoConfDir' as it has no actions.
 :cleanCargoConfDir UP-TO-DATE
-:cleanCargoConfDir took 0ms
-:cleanCargoConfDir (Thread[main,5,main]) completed. Took 0.0 secs.
+:cleanCargoConfDir took 1ms
+:cleanCargoConfDir (Thread[main,5,main]) completed. Took 0.001 secs.
 :cargoRunLocal (Thread[main,5,main]) started.
 :cargoRunLocal
-Executing task ':cargoRunLocal' (up-to-date check took 0.014 secs) due to:
+Executing task ':cargoRunLocal' (up-to-date check took 0.022 secs) due to:
   Task.upToDateWhen is false.
-Deployable artifacts = [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.0.war, /home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.0.war, /home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.0.war]
+Deployable artifacts = [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.1-SNAPSHOT.war, /home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.1-SNAPSHOT.war, /home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war]
 Config files = [/home/ubuntu/projects/uaa/scripts/travis/tomcat-conf/context.xml -> conf]
 Starting action 'run' for local container 'tomcat8x'
 Container properties = [:]
 System properties = [spring.profiles.active:default,mysql, smtp.host:localhost, smtp.port:2525]
-Installing container in [/home/ubuntu/projects/uaa/build/extract/tomcat-8.0.36]
 Tomcat 8.x starting...
-Deploying [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.0.war] to [./tmp/cargo/conf/webapps]...
-Deploying [/home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.0.war] to [./tmp/cargo/conf/webapps]...
-Deploying [/home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.0.war] to [./tmp/cargo/conf/webapps]...
-Deployable [http://localhost:8080/cargocpc/index.html] failed to finish deploying within the timeout period [120000]. The Deployable state is thus unknown.
-org.codehaus.cargo.container.ContainerException: Deployable [http://localhost:8080/cargocpc/index.html] failed to finish deploying within the timeout period [120000]. The Deployable state is thus unknown.
-:cargoRunLocal FAILED
-:cargoRunLocal took 128008ms
-:cargoRunLocal (Thread[main,5,main]) completed. Took 2 mins 8.008 secs.
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':cargoRunLocal'.
-> org.codehaus.cargo.container.ContainerException: Deployable [http://localhost:8080/cargocpc/index.html] failed to finish deploying within the timeout period [120000]. The Deployable state is thus unknown.
-
-* Try:
-Run with --stacktrace option to get the stack trace. Run with --debug option to get more log output.
-
-BUILD FAILED
-
-Total time: 2 mins 47.589 secs
-Task timings:
-    905ms  :cloudfoundry-identity-client-lib:compileJava
-   2983ms  :cloudfoundry-identity-model:javadoc
-   1439ms  :cloudfoundry-identity-client-lib:javadoc
-   3988ms  :cloudfoundry-identity-server:compileJava
-   8744ms  :cloudfoundry-identity-server:javadoc
-    514ms  :cloudfoundry-identity-server:javadocJar
-   3291ms  :cloudfoundry-identity-uaa:war
-   1691ms  :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc
-   2975ms  :cloudfoundry-identity-samples:cloudfoundry-identity-api:war
-   1222ms  :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc
-   3428ms  :cloudfoundry-identity-samples:cloudfoundry-identity-app:war
- 128008ms  :cargoRunLocal
-Test timings:
-Stopped 0 compiler daemon(s).
+Deploying [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
+Deploying [/home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
+Deploying [/home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
+Tomcat 8.x started on port [8080]
+[ant:cargo] Press Ctrl-C to stop the container...
+Press Ctrl-C to stop the container...
