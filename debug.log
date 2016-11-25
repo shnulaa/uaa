@@ -1,223 +1,224 @@
 Starting Build
-Settings evaluated using settings file '/home/ubuntu/projects/uaa/settings.gradle'.
-Projects loaded. Root project using build file '/home/ubuntu/projects/uaa/build.gradle'.
+Settings evaluated using settings file '/home/ub1/projects/uaa/settings.gradle'.
+Projects loaded. Root project using build file '/home/ub1/projects/uaa/build.gradle'.
 Included projects: [root project 'cloudfoundry-identity-parent', project ':cloudfoundry-identity-client-lib', project ':cloudfoundry-identity-model', project ':cloudfoundry-identity-samples', project ':cloudfoundry-identity-server', project ':cloudfoundry-identity-uaa', project ':cloudfoundry-identity-samples:cloudfoundry-identity-api', project ':cloudfoundry-identity-samples:cloudfoundry-identity-app']
-Evaluating root project 'cloudfoundry-identity-parent' using build file '/home/ubuntu/projects/uaa/build.gradle'.
-Evaluating project ':cloudfoundry-identity-client-lib' using build file '/home/ubuntu/projects/uaa/client-lib/build.gradle'.
-Evaluating project ':cloudfoundry-identity-model' using build file '/home/ubuntu/projects/uaa/model/build.gradle'.
-Evaluating project ':cloudfoundry-identity-samples' using build file '/home/ubuntu/projects/uaa/samples/build.gradle'.
-Evaluating project ':cloudfoundry-identity-server' using build file '/home/ubuntu/projects/uaa/server/build.gradle'.
-Evaluating project ':cloudfoundry-identity-uaa' using build file '/home/ubuntu/projects/uaa/uaa/build.gradle'.
+Evaluating root project 'cloudfoundry-identity-parent' using build file '/home/ub1/projects/uaa/build.gradle'.
+Evaluating project ':cloudfoundry-identity-client-lib' using build file '/home/ub1/projects/uaa/client-lib/build.gradle'.
+Evaluating project ':cloudfoundry-identity-model' using build file '/home/ub1/projects/uaa/model/build.gradle'.
+Exception raised while reading git metadata: java.lang.IllegalArgumentException: One of setGitDir or setWorkTree must be called.
+Evaluating project ':cloudfoundry-identity-samples' using build file '/home/ub1/projects/uaa/samples/build.gradle'.
+Evaluating project ':cloudfoundry-identity-server' using build file '/home/ub1/projects/uaa/server/build.gradle'.
+Evaluating project ':cloudfoundry-identity-uaa' using build file '/home/ub1/projects/uaa/uaa/build.gradle'.
 [Asciidoctor] asciidoctorj: 1.5.3.2
 [Asciidoctor] asciidoctorj-groovy-dsl: 1.0.0.preview2
-Evaluating project ':cloudfoundry-identity-samples:cloudfoundry-identity-api' using build file '/home/ubuntu/projects/uaa/samples/api/build.gradle'.
-Evaluating project ':cloudfoundry-identity-samples:cloudfoundry-identity-app' using build file '/home/ubuntu/projects/uaa/samples/app/build.gradle'.
+Evaluating project ':cloudfoundry-identity-samples:cloudfoundry-identity-api' using build file '/home/ub1/projects/uaa/samples/api/build.gradle'.
+Evaluating project ':cloudfoundry-identity-samples:cloudfoundry-identity-app' using build file '/home/ub1/projects/uaa/samples/app/build.gradle'.
 All projects evaluated.
 Selected primary task 'run' from project :
 Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':cloudfoundry-identity-model:compileJava', task ':cloudfoundry-identity-model:mainOutputResourcesDir', task ':cloudfoundry-identity-model:buildInfo', task ':cloudfoundry-identity-model:gitInfo', task ':cloudfoundry-identity-model:processResources', task ':cloudfoundry-identity-model:classes', task ':cloudfoundry-identity-model:jar', task ':cloudfoundry-identity-client-lib:compileJava', task ':cloudfoundry-identity-client-lib:processResources', task ':cloudfoundry-identity-client-lib:classes', task ':cloudfoundry-identity-client-lib:jar', task ':cloudfoundry-identity-model:javadoc', task ':cloudfoundry-identity-client-lib:javadoc', task ':cloudfoundry-identity-client-lib:javadocJar', task ':cloudfoundry-identity-client-lib:packageSources', task ':cloudfoundry-identity-client-lib:assemble', task ':cloudfoundry-identity-model:javadocJar', task ':cloudfoundry-identity-model:packageSources', task ':cloudfoundry-identity-model:assemble', task ':cloudfoundry-identity-samples:compileJava', task ':cloudfoundry-identity-samples:processResources', task ':cloudfoundry-identity-samples:classes', task ':cloudfoundry-identity-samples:jar', task ':cloudfoundry-identity-samples:javadoc', task ':cloudfoundry-identity-samples:javadocJar', task ':cloudfoundry-identity-samples:packageSources', task ':cloudfoundry-identity-samples:assemble', task ':cloudfoundry-identity-server:compileJava', task ':cloudfoundry-identity-server:processResources', task ':cloudfoundry-identity-server:classes', task ':cloudfoundry-identity-server:jar', task ':cloudfoundry-identity-server:javadoc', task ':cloudfoundry-identity-server:javadocJar', task ':cloudfoundry-identity-server:packageSources', task ':cloudfoundry-identity-server:assemble', task ':cloudfoundry-identity-uaa:compileJava', task ':cloudfoundry-identity-uaa:processResources', task ':cloudfoundry-identity-uaa:classes', task ':cloudfoundry-identity-uaa:javadoc', task ':cloudfoundry-identity-uaa:javadocJar', task ':cloudfoundry-identity-uaa:packageSources', task ':cloudfoundry-identity-uaa:war', task ':cloudfoundry-identity-uaa:assemble', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:classes', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:war', task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:classes', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:war', task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble', task ':assemble', task ':cleanCargoConfDir', task ':cargoRunLocal', task ':run']
 :compileJava (Thread[main,5,main]) started.
 :compileJava
-file or directory '/home/ubuntu/projects/uaa/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/src/main/java', not found
 Skipping task ':compileJava' as it has no source files.
 :compileJava UP-TO-DATE
-:compileJava took 17ms
-:compileJava (Thread[main,5,main]) completed. Took 0.022 secs.
+:compileJava took 20ms
+:compileJava (Thread[main,5,main]) completed. Took 0.024 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
-file or directory '/home/ubuntu/projects/uaa/src/main/resources', not found
+file or directory '/home/ub1/projects/uaa/src/main/resources', not found
 Skipping task ':processResources' as it has no source files.
 :processResources UP-TO-DATE
 :processResources took 1ms
-:processResources (Thread[main,5,main]) completed. Took 0.002 secs.
+:processResources (Thread[main,5,main]) completed. Took 0.001 secs.
 :classes (Thread[main,5,main]) started.
 :classes
 Skipping task ':classes' as it has no actions.
 :classes UP-TO-DATE
-:classes took 1ms
-:classes (Thread[main,5,main]) completed. Took 0.002 secs.
+:classes took 0ms
+:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Skipping task ':jar' as it is up-to-date (took 0.043 secs).
+Skipping task ':jar' as it is up-to-date (took 0.034 secs).
 :jar UP-TO-DATE
-:jar took 49ms
-:jar (Thread[main,5,main]) completed. Took 0.05 secs.
+:jar took 40ms
+:jar (Thread[main,5,main]) completed. Took 0.04 secs.
 :cloudfoundry-identity-model:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:compileJava
-Skipping task ':cloudfoundry-identity-model:compileJava' as it is up-to-date (took 0.175 secs).
+Skipping task ':cloudfoundry-identity-model:compileJava' as it is up-to-date (took 0.187 secs).
 :cloudfoundry-identity-model:compileJava UP-TO-DATE
-:cloudfoundry-identity-model:compileJava took 188ms
-:cloudfoundry-identity-model:compileJava (Thread[main,5,main]) completed. Took 0.189 secs.
+:cloudfoundry-identity-model:compileJava took 202ms
+:cloudfoundry-identity-model:compileJava (Thread[main,5,main]) completed. Took 0.202 secs.
 :cloudfoundry-identity-model:mainOutputResourcesDir (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:mainOutputResourcesDir
 Skipping task ':cloudfoundry-identity-model:mainOutputResourcesDir' as it has no actions.
 :cloudfoundry-identity-model:mainOutputResourcesDir UP-TO-DATE
 :cloudfoundry-identity-model:mainOutputResourcesDir took 1ms
-:cloudfoundry-identity-model:mainOutputResourcesDir (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-model:mainOutputResourcesDir (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-model:buildInfo (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:buildInfo
 Skipping task ':cloudfoundry-identity-model:buildInfo' as it has no actions.
 :cloudfoundry-identity-model:buildInfo UP-TO-DATE
 :cloudfoundry-identity-model:buildInfo took 1ms
-:cloudfoundry-identity-model:buildInfo (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-model:buildInfo (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-model:gitInfo (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:gitInfo
 Skipping task ':cloudfoundry-identity-model:gitInfo' as it has no actions.
 :cloudfoundry-identity-model:gitInfo UP-TO-DATE
-:cloudfoundry-identity-model:gitInfo took 1ms
-:cloudfoundry-identity-model:gitInfo (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-model:gitInfo took 0ms
+:cloudfoundry-identity-model:gitInfo (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-model:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:processResources
-Executing task ':cloudfoundry-identity-model:processResources' (up-to-date check took 0.006 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/src/main/resources/git.properties has changed.
-  Input file /home/ubuntu/projects/uaa/model/src/main/resources/build.properties has changed.
-:cloudfoundry-identity-model:processResources took 70ms
-:cloudfoundry-identity-model:processResources (Thread[main,5,main]) completed. Took 0.07 secs.
+Executing task ':cloudfoundry-identity-model:processResources' (up-to-date check took 0.005 secs) due to:
+  Input file /home/ub1/projects/uaa/model/src/main/resources/build.properties has changed.
+  Input file /home/ub1/projects/uaa/model/src/main/resources/git.properties has changed.
+:cloudfoundry-identity-model:processResources took 39ms
+:cloudfoundry-identity-model:processResources (Thread[main,5,main]) completed. Took 0.04 secs.
 :cloudfoundry-identity-model:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:classes
 Skipping task ':cloudfoundry-identity-model:classes' as it has no actions.
 :cloudfoundry-identity-model:classes took 1ms
-:cloudfoundry-identity-model:classes (Thread[main,5,main]) completed. Took 0.005 secs.
+:cloudfoundry-identity-model:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-model:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:jar
-Executing task ':cloudfoundry-identity-model:jar' (up-to-date check took 0.021 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/resources/main/build.properties has changed.
-  Input file /home/ubuntu/projects/uaa/model/build/resources/main/git.properties has changed.
-:cloudfoundry-identity-model:jar took 113ms
-:cloudfoundry-identity-model:jar (Thread[main,5,main]) completed. Took 0.113 secs.
+Executing task ':cloudfoundry-identity-model:jar' (up-to-date check took 0.031 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/resources/main/git.properties has changed.
+  Input file /home/ub1/projects/uaa/model/build/resources/main/build.properties has changed.
+:cloudfoundry-identity-model:jar took 210ms
+:cloudfoundry-identity-model:jar (Thread[main,5,main]) completed. Took 0.21 secs.
 :cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:compileJava
-Executing task ':cloudfoundry-identity-client-lib:compileJava' (up-to-date check took 0.039 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+Executing task ':cloudfoundry-identity-client-lib:compileJava' (up-to-date check took 0.065 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
-Note: /home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java uses unchecked or unsafe operations.
+Note: /home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java uses unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-:cloudfoundry-identity-client-lib:compileJava took 942ms
-:cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) completed. Took 0.943 secs.
+:cloudfoundry-identity-client-lib:compileJava took 1148ms
+:cloudfoundry-identity-client-lib:compileJava (Thread[main,5,main]) completed. Took 1.149 secs.
 :cloudfoundry-identity-client-lib:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:processResources
-file or directory '/home/ubuntu/projects/uaa/client-lib/src/main/resources', not found
+file or directory '/home/ub1/projects/uaa/client-lib/src/main/resources', not found
 Skipping task ':cloudfoundry-identity-client-lib:processResources' as it has no source files.
 :cloudfoundry-identity-client-lib:processResources UP-TO-DATE
-:cloudfoundry-identity-client-lib:processResources took 1ms
-:cloudfoundry-identity-client-lib:processResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-client-lib:processResources took 2ms
+:cloudfoundry-identity-client-lib:processResources (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-client-lib:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:classes
 Skipping task ':cloudfoundry-identity-client-lib:classes' as it has no actions.
-:cloudfoundry-identity-client-lib:classes took 1ms
-:cloudfoundry-identity-client-lib:classes (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-client-lib:classes took 0ms
+:cloudfoundry-identity-client-lib:classes (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:jar
-Skipping task ':cloudfoundry-identity-client-lib:jar' as it is up-to-date (took 0.004 secs).
+Skipping task ':cloudfoundry-identity-client-lib:jar' as it is up-to-date (took 0.006 secs).
 :cloudfoundry-identity-client-lib:jar UP-TO-DATE
-:cloudfoundry-identity-client-lib:jar took 5ms
-:cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) completed. Took 0.006 secs.
+:cloudfoundry-identity-client-lib:jar took 7ms
+:cloudfoundry-identity-client-lib:jar (Thread[main,5,main]) completed. Took 0.008 secs.
 :cloudfoundry-identity-model:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:javadoc
-Executing task ':cloudfoundry-identity-model:javadoc' (up-to-date check took 0.04 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/resources/main/build.properties has changed.
-  Input file /home/ubuntu/projects/uaa/model/build/resources/main/git.properties has changed.
-Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/model Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/model/build/tmp/javadoc/javadoc.options
+Executing task ':cloudfoundry-identity-model:javadoc' (up-to-date check took 0.045 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/resources/main/git.properties has changed.
+  Input file /home/ub1/projects/uaa/model/build/resources/main/build.properties has changed.
+Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ub1/projects/uaa/model Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ub1/projects/uaa/model/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
 warning: unknown enum constant Inclusion.NON_DEFAULT
   reason: class file for org.codehaus.jackson.map.annotate.JsonSerialize$Inclusion not found
-/home/ubuntu/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:608: warning: no @param for newEmail
+/home/ub1/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:608: warning: no @param for newEmail
     public void addEmail(String newEmail) {
                 ^
-/home/ubuntu/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:628: warning: no description for @param
+/home/ub1/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:628: warning: no description for @param
      * @param newPhoneNumber
        ^
-/home/ubuntu/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:653: warning: no @return
+/home/ub1/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimUser.java:653: warning: no @return
     public List<String> wordList() {
                         ^
-/home/ubuntu/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/util/UaaStringUtils.java:143: warning: no description for @param
+/home/ub1/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/util/UaaStringUtils.java:143: warning: no description for @param
      * @param s
        ^
-/home/ubuntu/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/provider/LockoutPolicy.java:33: warning: no @return
+/home/ub1/projects/uaa/model/src/main/java/org/cloudfoundry/identity/uaa/provider/LockoutPolicy.java:33: warning: no @return
     public LockoutPolicy setCountFailuresWithin(int interval) {
                          ^
 6 warnings
-:cloudfoundry-identity-model:javadoc took 2902ms
-:cloudfoundry-identity-model:javadoc (Thread[main,5,main]) completed. Took 2.903 secs.
+:cloudfoundry-identity-model:javadoc took 3574ms
+:cloudfoundry-identity-model:javadoc (Thread[main,5,main]) completed. Took 3.574 secs.
 :cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:javadoc
-Executing task ':cloudfoundry-identity-client-lib:javadoc' (up-to-date check took 0.008 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/client-lib Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/client-lib/build/tmp/javadoc/javadoc.options
+Executing task ':cloudfoundry-identity-client-lib:javadoc' (up-to-date check took 0.009 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ub1/projects/uaa/client-lib Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ub1/projects/uaa/client-lib/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:107: warning: no @return
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:107: warning: no @return
     public static UaaContextFactory factory(URI uaaURI) {
                                     ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:144: warning: no description for @return
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:144: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:399: warning: no description for @param
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:399: warning: no description for @param
      * @param tokenRequest
        ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:400: warning: no description for @param
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:400: warning: no description for @param
      * @param template
        ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:402: warning: no @param for existingProviders
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/UaaContextFactory.java:402: warning: no @param for existingProviders
     protected void skipSslValidation(TokenRequest tokenRequest, OAuth2RestTemplate template, List<OAuth2AccessTokenSupport> existingProviders)  {
                    ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/token/TokenRequest.java:381: warning: no description for @param
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/token/TokenRequest.java:381: warning: no description for @param
      * @param skipSslValidation
        ^
-/home/ubuntu/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/token/TokenRequest.java:408: warning: no description for @param
+/home/ub1/projects/uaa/client-lib/src/main/java/org/cloudfoundry/identity/client/token/TokenRequest.java:408: warning: no description for @param
      * @param authorizationCode
        ^
 7 warnings
-:cloudfoundry-identity-client-lib:javadoc took 1485ms
-:cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) completed. Took 1.486 secs.
+:cloudfoundry-identity-client-lib:javadoc took 1507ms
+:cloudfoundry-identity-client-lib:javadoc (Thread[main,5,main]) completed. Took 1.509 secs.
 :cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:javadocJar
 Executing task ':cloudfoundry-identity-client-lib:javadocJar' (up-to-date check took 0.004 secs) due to:
-  Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/org/cloudfoundry/identity/client/token/package-summary.html has changed.
-  Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/deprecated-list.html has changed.
-  Input file /home/ubuntu/projects/uaa/client-lib/build/docs/javadoc/org/cloudfoundry/identity/client/token/TokenRequest.html has changed.
-:cloudfoundry-identity-client-lib:javadocJar took 29ms
-:cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) completed. Took 0.03 secs.
+  Input file /home/ub1/projects/uaa/client-lib/build/docs/javadoc/allclasses-noframe.html has changed.
+  Input file /home/ub1/projects/uaa/client-lib/build/docs/javadoc/overview-frame.html has changed.
+  Input file /home/ub1/projects/uaa/client-lib/build/docs/javadoc/org/cloudfoundry/identity/client/token/package-frame.html has changed.
+:cloudfoundry-identity-client-lib:javadocJar took 41ms
+:cloudfoundry-identity-client-lib:javadocJar (Thread[main,5,main]) completed. Took 0.041 secs.
 :cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:packageSources
-file or directory '/home/ubuntu/projects/uaa/client-lib/src/main/resources', not found
-Skipping task ':cloudfoundry-identity-client-lib:packageSources' as it is up-to-date (took 0.003 secs).
+file or directory '/home/ub1/projects/uaa/client-lib/src/main/resources', not found
+Skipping task ':cloudfoundry-identity-client-lib:packageSources' as it is up-to-date (took 0.006 secs).
 :cloudfoundry-identity-client-lib:packageSources UP-TO-DATE
-:cloudfoundry-identity-client-lib:packageSources took 5ms
-:cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) completed. Took 0.005 secs.
+:cloudfoundry-identity-client-lib:packageSources took 7ms
+:cloudfoundry-identity-client-lib:packageSources (Thread[main,5,main]) completed. Took 0.008 secs.
 :cloudfoundry-identity-client-lib:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-client-lib:assemble
 Skipping task ':cloudfoundry-identity-client-lib:assemble' as it has no actions.
 :cloudfoundry-identity-client-lib:assemble took 0ms
-:cloudfoundry-identity-client-lib:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
+:cloudfoundry-identity-client-lib:assemble (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:javadocJar
-Executing task ':cloudfoundry-identity-model:javadocJar' (up-to-date check took 0.009 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/invitations/InvitationsRequest.html has changed.
-  Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/zone/BrandingInformationSource.html has changed.
-  Input file /home/ubuntu/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/scim/package-frame.html has changed.
-:cloudfoundry-identity-model:javadocJar took 148ms
-:cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) completed. Took 0.148 secs.
+Executing task ':cloudfoundry-identity-model:javadocJar' (up-to-date check took 0.014 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/resources/ActionResult.html has changed.
+  Input file /home/ub1/projects/uaa/model/build/docs/javadoc/org/cloudfoundry/identity/uaa/scim/ScimGroupExternalMember.html has changed.
+  Input file /home/ub1/projects/uaa/model/build/docs/javadoc/help-doc.html has changed.
+:cloudfoundry-identity-model:javadocJar took 141ms
+:cloudfoundry-identity-model:javadocJar (Thread[main,5,main]) completed. Took 0.142 secs.
 :cloudfoundry-identity-model:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:packageSources
-Executing task ':cloudfoundry-identity-model:packageSources' (up-to-date check took 0.006 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/src/main/resources/build.properties has changed.
-  Input file /home/ubuntu/projects/uaa/model/src/main/resources/git.properties has changed.
-:cloudfoundry-identity-model:packageSources took 52ms
-:cloudfoundry-identity-model:packageSources (Thread[main,5,main]) completed. Took 0.052 secs.
+Executing task ':cloudfoundry-identity-model:packageSources' (up-to-date check took 0.007 secs) due to:
+  Input file /home/ub1/projects/uaa/model/src/main/resources/build.properties has changed.
+  Input file /home/ub1/projects/uaa/model/src/main/resources/git.properties has changed.
+:cloudfoundry-identity-model:packageSources took 51ms
+:cloudfoundry-identity-model:packageSources (Thread[main,5,main]) completed. Took 0.051 secs.
 :cloudfoundry-identity-model:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-model:assemble
 Skipping task ':cloudfoundry-identity-model:assemble' as it has no actions.
-:cloudfoundry-identity-model:assemble took 0ms
+:cloudfoundry-identity-model:assemble took 1ms
 :cloudfoundry-identity-model:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:compileJava
-file or directory '/home/ubuntu/projects/uaa/samples/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/samples/src/main/java', not found
 Skipping task ':cloudfoundry-identity-samples:compileJava' as it has no source files.
 :cloudfoundry-identity-samples:compileJava UP-TO-DATE
 :cloudfoundry-identity-samples:compileJava took 1ms
-:cloudfoundry-identity-samples:compileJava (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-samples:compileJava (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-samples:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:processResources
-file or directory '/home/ubuntu/projects/uaa/samples/src/main/resources', not found
+file or directory '/home/ub1/projects/uaa/samples/src/main/resources', not found
 Skipping task ':cloudfoundry-identity-samples:processResources' as it has no source files.
 :cloudfoundry-identity-samples:processResources UP-TO-DATE
 :cloudfoundry-identity-samples:processResources took 1ms
@@ -226,58 +227,60 @@ Skipping task ':cloudfoundry-identity-samples:processResources' as it has no sou
 :cloudfoundry-identity-samples:classes
 Skipping task ':cloudfoundry-identity-samples:classes' as it has no actions.
 :cloudfoundry-identity-samples:classes UP-TO-DATE
-:cloudfoundry-identity-samples:classes took 1ms
+:cloudfoundry-identity-samples:classes took 0ms
 :cloudfoundry-identity-samples:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:jar
-Skipping task ':cloudfoundry-identity-samples:jar' as it is up-to-date (took 0.002 secs).
+Skipping task ':cloudfoundry-identity-samples:jar' as it is up-to-date (took 0.003 secs).
 :cloudfoundry-identity-samples:jar UP-TO-DATE
-:cloudfoundry-identity-samples:jar took 4ms
-:cloudfoundry-identity-samples:jar (Thread[main,5,main]) completed. Took 0.004 secs.
+:cloudfoundry-identity-samples:jar took 3ms
+:cloudfoundry-identity-samples:jar (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:javadoc
-file or directory '/home/ubuntu/projects/uaa/samples/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/samples/src/main/java', not found
 Skipping task ':cloudfoundry-identity-samples:javadoc' as it has no source files.
 :cloudfoundry-identity-samples:javadoc UP-TO-DATE
 :cloudfoundry-identity-samples:javadoc took 1ms
 :cloudfoundry-identity-samples:javadoc (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:javadocJar
-Skipping task ':cloudfoundry-identity-samples:javadocJar' as it is up-to-date (took 0.002 secs).
+Skipping task ':cloudfoundry-identity-samples:javadocJar' as it is up-to-date (took 0.001 secs).
 :cloudfoundry-identity-samples:javadocJar UP-TO-DATE
 :cloudfoundry-identity-samples:javadocJar took 3ms
 :cloudfoundry-identity-samples:javadocJar (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:packageSources
-file or directory '/home/ubuntu/projects/uaa/samples/src/main/resources', not found
-file or directory '/home/ubuntu/projects/uaa/samples/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/samples/src/main/resources', not found
+file or directory '/home/ub1/projects/uaa/samples/src/main/java', not found
 Skipping task ':cloudfoundry-identity-samples:packageSources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:packageSources UP-TO-DATE
-:cloudfoundry-identity-samples:packageSources took 4ms
+:cloudfoundry-identity-samples:packageSources took 3ms
 :cloudfoundry-identity-samples:packageSources (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:assemble
 Skipping task ':cloudfoundry-identity-samples:assemble' as it has no actions.
 :cloudfoundry-identity-samples:assemble UP-TO-DATE
-:cloudfoundry-identity-samples:assemble took 0ms
+:cloudfoundry-identity-samples:assemble took 1ms
 :cloudfoundry-identity-samples:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-server:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:compileJava
-Executing task ':cloudfoundry-identity-server:compileJava' (up-to-date check took 0.286 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+Executing task ':cloudfoundry-identity-server:compileJava' (up-to-date check took 0.43 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/login/LoginInfoEndpoint.java has changed.
+  Input file /home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/oauth/XOAuthAuthenticationManager.java has changed.
 Compiling with JDK Java compiler API.
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
-:cloudfoundry-identity-server:compileJava took 3986ms
-:cloudfoundry-identity-server:compileJava (Thread[main,5,main]) completed. Took 3.987 secs.
+:cloudfoundry-identity-server:compileJava took 6540ms
+:cloudfoundry-identity-server:compileJava (Thread[main,5,main]) completed. Took 6.541 secs.
 :cloudfoundry-identity-server:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:processResources
-Skipping task ':cloudfoundry-identity-server:processResources' as it is up-to-date (took 0.023 secs).
+Skipping task ':cloudfoundry-identity-server:processResources' as it is up-to-date (took 0.038 secs).
 :cloudfoundry-identity-server:processResources UP-TO-DATE
-:cloudfoundry-identity-server:processResources took 26ms
-:cloudfoundry-identity-server:processResources (Thread[main,5,main]) completed. Took 0.026 secs.
+:cloudfoundry-identity-server:processResources took 43ms
+:cloudfoundry-identity-server:processResources (Thread[main,5,main]) completed. Took 0.044 secs.
 :cloudfoundry-identity-server:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:classes
 Skipping task ':cloudfoundry-identity-server:classes' as it has no actions.
@@ -285,452 +288,460 @@ Skipping task ':cloudfoundry-identity-server:classes' as it has no actions.
 :cloudfoundry-identity-server:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-server:jar (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:jar
-Skipping task ':cloudfoundry-identity-server:jar' as it is up-to-date (took 0.027 secs).
-:cloudfoundry-identity-server:jar UP-TO-DATE
-:cloudfoundry-identity-server:jar took 29ms
-:cloudfoundry-identity-server:jar (Thread[main,5,main]) completed. Took 0.029 secs.
+Executing task ':cloudfoundry-identity-server:jar' (up-to-date check took 0.05 secs) due to:
+  Input file /home/ub1/projects/uaa/server/build/classes/main/org/cloudfoundry/identity/uaa/provider/oauth/XOAuthAuthenticationManager.class has changed.
+  Input file /home/ub1/projects/uaa/server/build/classes/main/org/cloudfoundry/identity/uaa/login/LoginInfoEndpoint.class has changed.
+:cloudfoundry-identity-server:jar took 453ms
+:cloudfoundry-identity-server:jar (Thread[main,5,main]) completed. Took 0.453 secs.
 :cloudfoundry-identity-server:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:javadoc
-Executing task ':cloudfoundry-identity-server:javadoc' (up-to-date check took 0.126 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/server Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/server/build/tmp/javadoc/javadoc.options
+Executing task ':cloudfoundry-identity-server:javadoc' (up-to-date check took 0.139 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/login/LoginInfoEndpoint.java has changed.
+  Input file /home/ub1/projects/uaa/server/build/classes/main/org/cloudfoundry/identity/uaa/provider/oauth/XOAuthAuthenticationManager.class has changed.
+Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ub1/projects/uaa/server Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ub1/projects/uaa/server/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
 warning: unknown enum constant Inclusion.NON_DEFAULT
   reason: class file for org.codehaus.jackson.map.annotate.JsonSerialize$Inclusion not found
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/bootstrap/ScimGroupBootstrap.java:112: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/bootstrap/ScimGroupBootstrap.java:112: warning: no description for @param
      * @param groups
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/bootstrap/ScimGroupBootstrap.java:159: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/bootstrap/ScimGroupBootstrap.java:159: warning: no description for @param
      * @param membershipInfo
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/PasswordChangeEndpoint.java:73: warning: no @param for messageConverters
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/PasswordChangeEndpoint.java:73: warning: no @param for messageConverters
     public void setMessageConverters(HttpMessageConverter<?>[] messageConverters) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @param for authentication
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @param for authentication
     public String get(Authentication authentication, Model model) {
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @param for model
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @param for model
     public String get(Authentication authentication, Model model) {
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:54: warning: no @return
     public String get(Authentication authentication, Model model) {
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for checkedScopes
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for checkedScopes
     public String post(@RequestParam(required = false) Collection<String> checkedScopes,
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for update
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for update
     public String post(@RequestParam(required = false) Collection<String> checkedScopes,
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for delete
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for delete
     public String post(@RequestParam(required = false) Collection<String> checkedScopes,
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for clientId
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @param for clientId
     public String post(@RequestParam(required = false) Collection<String> checkedScopes,
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/account/ProfileController.java:80: warning: no @return
     public String post(@RequestParam(required = false) Collection<String> checkedScopes,
                   ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:31: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:31: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:32: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:32: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:33: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:33: warning: no description for @throws
      * @throws org.cloudfoundry.identity.uaa.scim.exception.MemberAlreadyExistsException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:41: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:41: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:42: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:42: warning: no description for @param
      * @param filter
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:43: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:43: warning: no description for @param
      *@param includeEntities  @return
       ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:43: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:43: warning: no description for @return
      *@param includeEntities  @return
                               ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:44: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:44: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:51: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:51: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:52: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:52: warning: no description for @param
      * @param permission
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:53: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:53: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:54: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:54: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:62: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:62: warning: no description for @param
      * @param memberId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:65: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:65: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:66: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:66: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:73: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:73: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:74: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:74: warning: no description for @param
      * @param memberId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:75: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:75: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:76: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:76: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:77: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:77: warning: no description for @throws
      * @throws MemberNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:84: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:84: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:85: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:85: warning: no description for @param
      * @param member
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:86: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:86: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:87: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:87: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:88: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:88: warning: no description for @throws
      * @throws MemberNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:96: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:96: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:97: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:97: warning: no description for @param
      * @param members
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:98: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:98: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:99: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:99: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:106: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:106: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:107: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:107: warning: no description for @param
      * @param memberId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:108: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:108: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:109: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:109: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:110: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:110: warning: no description for @throws
      * @throws MemberNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:119: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:119: warning: no description for @param
      * @param groupId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:120: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:120: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:121: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:121: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:128: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:128: warning: no description for @param
      * @param memberId
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:129: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:129: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:130: warning: no description for @throws
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/ScimGroupMembershipManager.java:130: warning: no description for @throws
      * @throws ScimResourceNotFoundException
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/jdbc/JdbcScimUserProvisioning.java:417: warning: no @param for passwordEncoder
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/jdbc/JdbcScimUserProvisioning.java:417: warning: no @param for passwordEncoder
     public void setPasswordEncoder(PasswordEncoder passwordEncoder) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/jdbc/JdbcScimUserProvisioning.java:425: warning: no @param for usernamePattern
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/jdbc/JdbcScimUserProvisioning.java:425: warning: no @param for usernamePattern
     public void setUsernamePattern(String usernamePattern) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/resources/ResourceMonitor.java:7: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/resources/ResourceMonitor.java:7: warning: no description for @return
      * @return
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/manager/UsernamePasswordExtractingAuthenticationManager.java:37: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/manager/UsernamePasswordExtractingAuthenticationManager.java:37: warning: no description for @param
      * @param delegate
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimUserEndpoints.java:158: warning: no @param for messageConverters
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimUserEndpoints.java:158: warning: no @param for messageConverters
     public void setMessageConverters(HttpMessageConverter<?>[] messageConverters) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/endpoints/UserIdConversionEndpoints.java:86: warning: no @param for enabled
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/scim/endpoints/UserIdConversionEndpoints.java:86: warning: no @param for enabled
     public void setEnabled(boolean enabled) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/client/ClientDetailsValidator.java:22: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/client/ClientDetailsValidator.java:22: warning: no description for @param
      * @param clientDetails
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/client/SocialClientUserDetailsSource.java:72: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/client/SocialClientUserDetailsSource.java:72: warning: no description for @param
      * @param userInfoUrl
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/web/ExceptionReportHttpMessageConverter.java:54: warning: no @param for messageConverters
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/web/ExceptionReportHttpMessageConverter.java:54: warning: no @param for messageConverters
     public void setMessageConverters(HttpMessageConverter<?>[] messageConverters) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/saml/NonSnarlMetadataManager.java:669: warning: no @throws for org.opensaml.saml2.metadata.provider.MetadataProviderException
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/saml/NonSnarlMetadataManager.java:669: warning: no @throws for org.opensaml.saml2.metadata.provider.MetadataProviderException
         public ChainingEntitiesDescriptor() throws MetadataProviderException {
                ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/KeyInfo.java:134: warning: no @param for key
-    public static boolean isAssymetricKey(String key) {
-                          ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaAuthorizationRequestManager.java:240: warning: no @param for parameters
-    public void validateParameters(Map<String, String> parameters, ClientDetails clientDetails) {
-                ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaAuthorizationRequestManager.java:240: warning: no @param for clientDetails
-    public void validateParameters(Map<String, String> parameters, ClientDetails clientDetails) {
-                ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:758: warning: no description for @param
-     * @param authentication
-       ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:759: warning: no description for @return
-     * @return
-       ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:926: warning: no description for @param
-     * @param scope
-       ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/BackwardsCompatibleTokenEndpointAuthenticationFilter.java:71: warning: no @param for oAuth2RequestFactory
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/BackwardsCompatibleTokenEndpointAuthenticationFilter.java:71: warning: no @param for oAuth2RequestFactory
     public BackwardsCompatibleTokenEndpointAuthenticationFilter(AuthenticationManager authenticationManager, OAuth2RequestFactory oAuth2RequestFactory) {
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/LoginServerTokenEndpointFilter.java:41: warning: no @param for oAuth2RequestFactory
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/LoginServerTokenEndpointFilter.java:41: warning: no @param for oAuth2RequestFactory
     public LoginServerTokenEndpointFilter(AuthenticationManager authenticationManager, OAuth2RequestFactory oAuth2RequestFactory, List<String> addNewUserParameters) {
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/LoginServerTokenEndpointFilter.java:41: warning: no @param for addNewUserParameters
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/LoginServerTokenEndpointFilter.java:41: warning: no @param for addNewUserParameters
     public LoginServerTokenEndpointFilter(AuthenticationManager authenticationManager, OAuth2RequestFactory oAuth2RequestFactory, List<String> addNewUserParameters) {
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/UaaAuthentication.java:61: warning: no @param for principal
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/UaaAuthentication.java:61: warning: no @param for principal
     public UaaAuthentication(UaaPrincipal principal,
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/UaaAuthentication.java:61: warning: no @param for details
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/authentication/UaaAuthentication.java:61: warning: no @param for details
     public UaaAuthentication(UaaPrincipal principal,
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:32: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/KeyInfo.java:134: warning: no @param for key
+    public static boolean isAssymetricKey(String key) {
+                          ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaAuthorizationRequestManager.java:240: warning: no @param for parameters
+    public void validateParameters(Map<String, String> parameters, ClientDetails clientDetails) {
+                ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaAuthorizationRequestManager.java:240: warning: no @param for clientDetails
+    public void validateParameters(Map<String, String> parameters, ClientDetails clientDetails) {
+                ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:758: warning: no description for @param
+     * @param authentication
+       ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:759: warning: no description for @return
+     * @return
+       ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/UaaTokenServices.java:926: warning: no description for @param
+     * @param scope
+       ^
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:32: warning: no @return
     boolean isClient();
             ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:38: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:38: warning: no @return
     boolean isUser();
             ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:64: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/SecurityContextAccessor.java:64: warning: no @return
     String getAuthenticationInfo();
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/jwt/JwtHelper.java:42: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/oauth/jwt/JwtHelper.java:42: warning: no @return
     public static Jwt decode(String token) {
                       ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:173: warning: no @param for username
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:173: warning: no @param for username
     protected Set<GrantedAuthority> getAdditionalRoles(DirContextOperations user, String username) {
                                     ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:252: warning: no @param for convertToUpperCase
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:252: warning: no @param for convertToUpperCase
     public void setConvertToUpperCase(boolean convertToUpperCase) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:285: warning: no @param for rolePrefix
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:285: warning: no @param for rolePrefix
     public void setRolePrefix(String rolePrefix) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:305: warning: no @param for ignore
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/DefaultLdapAuthoritiesPopulator.java:305: warning: no @param for ignore
     public void setIgnorePartialResultException(boolean ignore) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for ctx
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for ctx
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for searchControls
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for searchControls
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for base
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for base
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for filter
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for filter
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for params
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @param for params
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @return
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @throws for javax.naming.NamingException
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/ldap/extension/SpringSecurityLdapTemplate.java:243: warning: no @throws for javax.naming.NamingException
     public static DirContextOperations searchForSingleEntryInternal(DirContext ctx, SearchControls searchControls,
                                        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:136: warning: no @param for requireHttps
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:136: warning: no @param for requireHttps
     public void setRequireHttps(boolean requireHttps) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:148: warning: no @param for dumpRequests
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:148: warning: no @param for dumpRequests
     public void setDumpRequests(boolean dumpRequests) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:160: warning: no @param for ignore
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:160: warning: no @param for ignore
     public void setIgnore(List<String> ignore) {
                 ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:169: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/SecurityFilterChainPostProcessor.java:169: warning: no description for @param
      * @param additionalFilters
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/UaaRequestMatcher.java:71: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/security/web/UaaRequestMatcher.java:71: warning: no description for @param
      * @param method
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LdapUtils.java:82: warning: no @param for ldapConfig
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LdapUtils.java:82: warning: no @param for ldapConfig
     public static LdapIdentityProviderDefinition fromConfig(Map<String, Object> ldapConfig) {
                                                  ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LdapUtils.java:82: warning: no @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LdapUtils.java:82: warning: no @return
     public static LdapIdentityProviderDefinition fromConfig(Map<String, Object> ldapConfig) {
                                                  ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LinkedMaskingMultiValueMap.java:71: warning: no @param for maskedAttributes
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/LinkedMaskingMultiValueMap.java:71: warning: no @param for maskedAttributes
     public LinkedMaskingMultiValueMap(Set<K> maskedAttributes) {
            ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:25: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:25: warning: no description for @param
      * @param input
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:26: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:26: warning: no description for @param
      * @param startIndex
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:27: warning: no description for @param
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:27: warning: no description for @param
      * @param count
        ^
-/home/ubuntu/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:28: warning: no description for @return
+/home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/util/UaaPagingUtils.java:28: warning: no description for @return
      * @return
        ^
 100 warnings
-:cloudfoundry-identity-server:javadoc took 7906ms
-:cloudfoundry-identity-server:javadoc (Thread[main,5,main]) completed. Took 7.906 secs.
+:cloudfoundry-identity-server:javadoc took 9298ms
+:cloudfoundry-identity-server:javadoc (Thread[main,5,main]) completed. Took 9.299 secs.
 :cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:javadocJar
-Executing task ':cloudfoundry-identity-server:javadocJar' (up-to-date check took 0.019 secs) due to:
-  Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/provider/oauth/OauthIdentityProviderDefinitionFactoryBean.html has changed.
-  Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/account/package-tree.html has changed.
-  Input file /home/ubuntu/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/authentication/manager/ChainedAuthenticationManager.AuthenticationManagerConfiguration.html has changed.
-:cloudfoundry-identity-server:javadocJar took 523ms
-:cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) completed. Took 0.523 secs.
+Executing task ':cloudfoundry-identity-server:javadocJar' (up-to-date check took 0.028 secs) due to:
+  Input file /home/ub1/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/provider/saml/idp/SamlServiceProviderConfigurator.html has changed.
+  Input file /home/ub1/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/resources/QueryableResourceManager.html has changed.
+  Input file /home/ub1/projects/uaa/server/build/docs/javadoc/org/cloudfoundry/identity/uaa/authentication/event/PrincipalAuthenticationFailureEvent.html has changed.
+:cloudfoundry-identity-server:javadocJar took 472ms
+:cloudfoundry-identity-server:javadocJar (Thread[main,5,main]) completed. Took 0.473 secs.
 :cloudfoundry-identity-server:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:packageSources
-Skipping task ':cloudfoundry-identity-server:packageSources' as it is up-to-date (took 0.017 secs).
-:cloudfoundry-identity-server:packageSources UP-TO-DATE
-:cloudfoundry-identity-server:packageSources took 17ms
-:cloudfoundry-identity-server:packageSources (Thread[main,5,main]) completed. Took 0.018 secs.
+Executing task ':cloudfoundry-identity-server:packageSources' (up-to-date check took 0.023 secs) due to:
+  Input file /home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/login/LoginInfoEndpoint.java has changed.
+  Input file /home/ub1/projects/uaa/server/src/main/java/org/cloudfoundry/identity/uaa/provider/oauth/XOAuthAuthenticationManager.java has changed.
+:cloudfoundry-identity-server:packageSources took 250ms
+:cloudfoundry-identity-server:packageSources (Thread[main,5,main]) completed. Took 0.25 secs.
 :cloudfoundry-identity-server:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-server:assemble
 Skipping task ':cloudfoundry-identity-server:assemble' as it has no actions.
-:cloudfoundry-identity-server:assemble took 1ms
+:cloudfoundry-identity-server:assemble took 0ms
 :cloudfoundry-identity-server:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-uaa:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:compileJava
-file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/uaa/src/main/java', not found
 Skipping task ':cloudfoundry-identity-uaa:compileJava' as it has no source files.
 :cloudfoundry-identity-uaa:compileJava UP-TO-DATE
-:cloudfoundry-identity-uaa:compileJava took 1ms
-:cloudfoundry-identity-uaa:compileJava (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-uaa:compileJava took 2ms
+:cloudfoundry-identity-uaa:compileJava (Thread[main,5,main]) completed. Took 0.002 secs.
 :cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:processResources
-Executing task ':cloudfoundry-identity-uaa:processResources' (up-to-date check took 0.003 secs) due to:
-  Input file /home/ubuntu/projects/uaa/uaa/src/main/resources/uaa.yml has changed.
-:cloudfoundry-identity-uaa:processResources took 47ms
-:cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) completed. Took 0.048 secs.
+Skipping task ':cloudfoundry-identity-uaa:processResources' as it is up-to-date (took 0.006 secs).
+:cloudfoundry-identity-uaa:processResources UP-TO-DATE
+:cloudfoundry-identity-uaa:processResources took 8ms
+:cloudfoundry-identity-uaa:processResources (Thread[main,5,main]) completed. Took 0.009 secs.
 :cloudfoundry-identity-uaa:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:classes
 Skipping task ':cloudfoundry-identity-uaa:classes' as it has no actions.
-:cloudfoundry-identity-uaa:classes took 0ms
-:cloudfoundry-identity-uaa:classes (Thread[main,5,main]) completed. Took 0.0 secs.
+:cloudfoundry-identity-uaa:classes UP-TO-DATE
+:cloudfoundry-identity-uaa:classes took 1ms
+:cloudfoundry-identity-uaa:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-uaa:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:javadoc
-file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
+file or directory '/home/ub1/projects/uaa/uaa/src/main/java', not found
 Skipping task ':cloudfoundry-identity-uaa:javadoc' as it has no source files.
 :cloudfoundry-identity-uaa:javadoc UP-TO-DATE
 :cloudfoundry-identity-uaa:javadoc took 1ms
 :cloudfoundry-identity-uaa:javadoc (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:javadocJar
-Skipping task ':cloudfoundry-identity-uaa:javadocJar' as it is up-to-date (took 0.001 secs).
+Skipping task ':cloudfoundry-identity-uaa:javadocJar' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-uaa:javadocJar UP-TO-DATE
-:cloudfoundry-identity-uaa:javadocJar took 2ms
-:cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-uaa:javadocJar took 3ms
+:cloudfoundry-identity-uaa:javadocJar (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:packageSources
-file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
-Executing task ':cloudfoundry-identity-uaa:packageSources' (up-to-date check took 0.002 secs) due to:
-  Input file /home/ubuntu/projects/uaa/uaa/src/main/resources/uaa.yml has changed.
-file or directory '/home/ubuntu/projects/uaa/uaa/src/main/java', not found
-:cloudfoundry-identity-uaa:packageSources took 23ms
-:cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) completed. Took 0.023 secs.
+file or directory '/home/ub1/projects/uaa/uaa/src/main/java', not found
+Skipping task ':cloudfoundry-identity-uaa:packageSources' as it is up-to-date (took 0.004 secs).
+:cloudfoundry-identity-uaa:packageSources UP-TO-DATE
+:cloudfoundry-identity-uaa:packageSources took 4ms
+:cloudfoundry-identity-uaa:packageSources (Thread[main,5,main]) completed. Took 0.006 secs.
 :cloudfoundry-identity-uaa:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:war
-Executing task ':cloudfoundry-identity-uaa:war' (up-to-date check took 0.017 secs) due to:
-  Input file /home/ubuntu/projects/uaa/uaa/build/resources/main/uaa.yml has changed.
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-:cloudfoundry-identity-uaa:war took 3644ms
-:cloudfoundry-identity-uaa:war (Thread[main,5,main]) completed. Took 3.645 secs.
+Executing task ':cloudfoundry-identity-uaa:war' (up-to-date check took 0.031 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-uaa:war took 3083ms
+:cloudfoundry-identity-uaa:war (Thread[main,5,main]) completed. Took 3.084 secs.
 :cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-uaa:assemble
 Skipping task ':cloudfoundry-identity-uaa:assemble' as it has no actions.
 :cloudfoundry-identity-uaa:assemble took 0ms
-:cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-uaa:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava' (up-to-date check took 0.045 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava' (up-to-date check took 0.057 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava took 152ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) completed. Took 0.152 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava took 193ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:compileJava (Thread[main,5,main]) completed. Took 0.195 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources' as it is up-to-date (took 0.001 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources took 2ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) completed. Took 0.002 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources took 3ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:processResources (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:classes' as it has no actions.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:classes took 1ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:classes took 0ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:classes (Thread[main,5,main]) completed. Took 0.001 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc' (up-to-date check took 0.007 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/samples/api Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/samples/api/build/tmp/javadoc/javadoc.options
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc' (up-to-date check took 0.011 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
+Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ub1/projects/uaa/samples/api Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ub1/projects/uaa/samples/api/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc took 1247ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) completed. Took 1.247 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc took 1607ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc (Thread[main,5,main]) completed. Took 1.608 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar' (up-to-date check took 0.002 secs) due to:
-  Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/org/cloudfoundry/identity/api/web/package-summary.html has changed.
-  Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/deprecated-list.html has changed.
-  Input file /home/ubuntu/projects/uaa/samples/api/build/docs/javadoc/allclasses-noframe.html has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar took 14ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) completed. Took 0.014 secs.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar' (up-to-date check took 0.007 secs) due to:
+  Input file /home/ub1/projects/uaa/samples/api/build/docs/javadoc/allclasses-noframe.html has changed.
+  Input file /home/ub1/projects/uaa/samples/api/build/docs/javadoc/org/cloudfoundry/identity/api/web/ContentTypeFilter.html has changed.
+  Input file /home/ub1/projects/uaa/samples/api/build/docs/javadoc/index-all.html has changed.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar took 25ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:javadocJar (Thread[main,5,main]) completed. Took 0.026 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources
-Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources' as it is up-to-date (took 0.002 secs).
+Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources' as it is up-to-date (took 0.003 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources took 3ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources (Thread[main,5,main]) completed. Took 0.003 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources took 4ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:packageSources (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:war
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:war' (up-to-date check took 0.058 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:war took 3080ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) completed. Took 3.081 secs.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:war' (up-to-date check took 0.016 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:war took 2535ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:war (Thread[main,5,main]) completed. Took 2.537 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble' as it has no actions.
 :cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble took 0ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-api:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava' (up-to-date check took 0.035 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava' (up-to-date check took 0.075 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
 Compiling with JDK Java compiler API.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava took 129ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) completed. Took 0.129 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava took 212ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:compileJava (Thread[main,5,main]) completed. Took 0.212 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources took 3ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources (Thread[main,5,main]) completed. Took 0.003 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources took 4ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:processResources (Thread[main,5,main]) completed. Took 0.004 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:classes (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:classes
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:classes' as it has no actions.
@@ -738,37 +749,39 @@ Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:classes'
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc' (up-to-date check took 0.007 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ubuntu/projects/uaa/samples/app Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ubuntu/projects/uaa/samples/app/build/tmp/javadoc/javadoc.options
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc' (up-to-date check took 0.009 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
+Starting process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''. Working directory: /home/ub1/projects/uaa/samples/app Command: /usr/local/java/jdk1.8.0_91/bin/javadoc @/home/ub1/projects/uaa/samples/app/build/tmp/javadoc/javadoc.options
 Successfully started process 'command '/usr/local/java/jdk1.8.0_91/bin/javadoc''
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc took 1295ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) completed. Took 1.296 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc took 1465ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc (Thread[main,5,main]) completed. Took 1.465 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar
 Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar' (up-to-date check took 0.002 secs) due to:
-  Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/deprecated-list.html has changed.
-  Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/constant-values.html has changed.
-  Input file /home/ubuntu/projects/uaa/samples/app/build/docs/javadoc/overview-tree.html has changed.
+  Input file /home/ub1/projects/uaa/samples/app/build/docs/javadoc/allclasses-frame.html has changed.
+  Input file /home/ub1/projects/uaa/samples/app/build/docs/javadoc/org/cloudfoundry/identity/app/web/package-tree.html has changed.
+  Input file /home/ub1/projects/uaa/samples/app/build/docs/javadoc/help-doc.html has changed.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar took 13ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadocJar (Thread[main,5,main]) completed. Took 0.013 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources' as it is up-to-date (took 0.002 secs).
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources UP-TO-DATE
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources took 2ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources took 3ms
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:packageSources (Thread[main,5,main]) completed. Took 0.003 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:war
-Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:war' (up-to-date check took 0.009 secs) due to:
-  Input file /home/ubuntu/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:war took 4032ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) completed. Took 4.033 secs.
+Executing task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:war' (up-to-date check took 0.012 secs) due to:
+  Input file /home/ub1/projects/uaa/model/build/libs/cloudfoundry-identity-model-3.7.1-SNAPSHOT.jar has changed.
+  Input file /home/ub1/projects/uaa/server/build/libs/cloudfoundry-identity-server-3.7.1-SNAPSHOT.jar has changed.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:war took 2445ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:war (Thread[main,5,main]) completed. Took 2.445 secs.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble (Thread[main,5,main]) started.
 :cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble
 Skipping task ':cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble' as it has no actions.
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble took 0ms
-:cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble took 1ms
+:cloudfoundry-identity-samples:cloudfoundry-identity-app:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
@@ -782,17 +795,44 @@ Skipping task ':cleanCargoConfDir' as it has no actions.
 :cleanCargoConfDir (Thread[main,5,main]) completed. Took 0.001 secs.
 :cargoRunLocal (Thread[main,5,main]) started.
 :cargoRunLocal
-Executing task ':cargoRunLocal' (up-to-date check took 0.022 secs) due to:
+Executing task ':cargoRunLocal' (up-to-date check took 0.012 secs) due to:
   Task.upToDateWhen is false.
-Deployable artifacts = [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.1-SNAPSHOT.war, /home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.1-SNAPSHOT.war, /home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war]
-Config files = [/home/ubuntu/projects/uaa/scripts/travis/tomcat-conf/context.xml -> conf]
+Deployable artifacts = [/home/ub1/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war]
+Config files = [/home/ub1/projects/uaa/scripts/travis/tomcat-conf/context.xml -> conf]
 Starting action 'run' for local container 'tomcat8x'
 Container properties = [:]
 System properties = [spring.profiles.active:default,mysql, smtp.host:localhost, smtp.port:2525]
 Tomcat 8.x starting...
-Deploying [/home/ubuntu/projects/uaa/samples/api/build/libs/cloudfoundry-identity-api-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
-Deploying [/home/ubuntu/projects/uaa/samples/app/build/libs/cloudfoundry-identity-app-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
-Deploying [/home/ubuntu/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war] to [/home/ubuntu/projects/uaa/tmp/cargo/conf/webapps]...
+Deploying [/home/ub1/projects/uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.7.1-SNAPSHOT.war] to [/home/ub1/projects/uaa/tmp/cargo/conf/webapps]...
 Tomcat 8.x started on port [8080]
 [ant:cargo] Press Ctrl-C to stop the container...
 Press Ctrl-C to stop the container...
+Tomcat 8.x is stopping...
+:cargoRunLocal took 3551240ms
+:cargoRunLocal (Thread[main,5,main]) completed. Took 59 mins 11.24 secs.
+:run (Thread[main,5,main]) started.
+:run
+Skipping task ':run' as it has no actions.
+:run took 1ms
+:run (Thread[main,5,main]) completed. Took 0.001 secs.
+
+BUILD SUCCESSFUL
+
+Total time: 59 mins 54.273 secs
+Task timings:
+   1148ms  :cloudfoundry-identity-client-lib:compileJava
+   3574ms  :cloudfoundry-identity-model:javadoc
+   1507ms  :cloudfoundry-identity-client-lib:javadoc
+   6540ms  :cloudfoundry-identity-server:compileJava
+   9298ms  :cloudfoundry-identity-server:javadoc
+   3083ms  :cloudfoundry-identity-uaa:war
+   1607ms  :cloudfoundry-identity-samples:cloudfoundry-identity-api:javadoc
+   2535ms  :cloudfoundry-identity-samples:cloudfoundry-identity-api:war
+   1465ms  :cloudfoundry-identity-samples:cloudfoundry-identity-app:javadoc
+   2445ms  :cloudfoundry-identity-samples:cloudfoundry-identity-app:war
+3551240ms  :cargoRunLocal
+Test timings:
+Stopped 0 compiler daemon(s).
+
+This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.9/userguide/gradle_daemon.html
+Tomcat 8.x is stopped

@@ -395,6 +395,7 @@ public class LoginInfoEndpoint {
         query.add("response_type=code");
         String requestURL = request.getRequestURL().toString();
         String rootContext = StringUtils.hasText(request.getServletPath()) ? requestURL.substring(0, requestURL.indexOf(request.getServletPath())) : requestURL;
+	//rootContext = "http://uaa.dev.agoodme.com/uaa";
         query.add("redirect_uri=" + URLEncoder.encode(rootContext + "/login/callback/" + alias, "UTF-8"));
         if (definition.getScopes() != null && !definition.getScopes().isEmpty()) query.add("scope=" + URLEncoder.encode(String.join(" ", definition.getScopes()), "UTF-8"));
         String queryString = String.join("&", query);

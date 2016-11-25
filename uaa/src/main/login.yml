@@ -45,25 +45,6 @@
 #        - https://url2.domain2.com/logout-success
 
 login:
-  oauth:
-    providers:
-      google:
-        type: oidc1.0
-        authUrl: https://accounts.google.com/o/oauth2/v2/auth
-        tokenUrl: https://www.googleapis.com/oauth2/v4/token
-        issuer: https://accounts.google.com
-        redirectUrl: http://localhost:8080/uaa
-        scopes:
-          - openid
-          - email
-        linkText: Login with google
-        showLinkText: true
-        addShadowUserOnLogin: true
-        relyingPartyId: "141518411077-psci11h1r60m8p7bc44hdrqgvdrpap9p.apps.googleusercontent.com"
-        relyingPartySecret: "Lm-i3ZxIP0oq5CQYR6Mqeth5"
-        skipSslValidation: false
-        attributeMappings:
-          user_name: email
   # Enable create account and forgot password links on the Login Server (enabled by default)
   #selfServiceLinksEnabled: true
   #base URL that the login server can be reached at
@@ -93,7 +74,7 @@ login:
 #          external_groups:
 #            - scopes_example_group
 #            - roles_example_group
-  url: http://127.0.0.1:8080/uaa
+  url: http://localhost:8080/uaa
 #  idpDiscoveryEnabled: true
 
   # SAML Key Configuration
@@ -140,7 +121,7 @@ login:
 
   # SAML - The entity base url is the location of this application
   # (The host and port of the application that will accept assertions)
-  entityBaseURL: http://127.0.0.1:8080/uaa
+  entityBaseURL: http://localhost:8080/uaa
   # The entityID of this SP
   entityID: cloudfoundry-saml-login
   saml:
@@ -243,7 +224,7 @@ login:
 #END SAML PROVIDERS
 
   authorize:
-    url: http://127.0.0.1:8080/uaa/oauth/authorize
+    url: http://localhost:8080/uaa/oauth/authorize
 
 #  homeRedirect: http://example.com/
 
@@ -259,13 +240,13 @@ login:
 
 uaa:
   # The hostname of the UAA that this login server will connect to
-  url: http://127.0.0.1:8080/uaa
+  url: http://localhost:8080/uaa
   token:
-    url: http://127.0.0.1:8080/uaa/oauth/token
+    url: http://localhost:8080/uaa/oauth/token
   approvals:
-    url: http://127.0.0.1:8080/uaa/approvals
+    url: http://localhost:8080/uaa/approvals
   login:
-    url: http://127.0.0.1:8080/uaa/authenticate
+    url: http://localhost:8080/uaa/authenticate
 
 # The secret that this login server will use to authenticate to the uaa
 LOGIN_SECRET: loginsecret

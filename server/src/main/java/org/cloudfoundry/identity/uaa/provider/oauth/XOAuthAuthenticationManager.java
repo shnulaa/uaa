@@ -290,6 +290,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         body.add("response_type", getResponseType(config));
         body.add("code", codeToken.getCode());
         body.add("redirect_uri", codeToken.getRedirectUrl());
+	//body.add("redirect_uri", "http://uaa.dev.agoodme.com/uaa/login/callback/" + codeToken.getOrigin());
 
         HttpHeaders headers = new HttpHeaders();
         String clientAuthHeader = getClientAuthHeader(config);
