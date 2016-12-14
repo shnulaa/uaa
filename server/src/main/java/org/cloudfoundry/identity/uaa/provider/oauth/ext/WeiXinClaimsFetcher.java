@@ -43,7 +43,7 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return get(config, paras, headers);
+		return get(config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return get(config, paras, headers);
+		return get(config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
 	}
 
 }

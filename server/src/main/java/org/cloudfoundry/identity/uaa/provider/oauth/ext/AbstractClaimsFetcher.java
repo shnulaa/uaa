@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.xpath.operations.Bool;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
@@ -102,11 +103,11 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 	 * @param headers
 	 * @return
 	 */
-	protected Map<String, Object> get(AbstractXOAuthIdentityProviderDefinition config, Map<String, String> paras,
+	protected Map<String, Object> get(boolean skipSsl, String baseUrl, Map<String, String> paras,
 			HttpHeaders headers) {
-		final String requestUrl = appendUrl(config.getTokenUrl().toString(), paras);
+		final String requestUrl = appendUrl(baseUrl, paras);
 		try {
-			if (config.isSkipSslValidation()) {
+			if (skipSsl) {
 				restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
 			}
 			HttpEntity requestEntity = new HttpEntity<>(null, headers);
