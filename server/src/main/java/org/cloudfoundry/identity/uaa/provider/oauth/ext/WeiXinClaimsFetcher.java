@@ -6,6 +6,7 @@ import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefi
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
@@ -40,7 +41,7 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return post(config, body, headers);
+		return restHttp(config, body, headers, HttpMethod.GET);
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return post(config, body, headers);
+		return restHttp(config, body, headers, HttpMethod.GET);
 	}
 
 }

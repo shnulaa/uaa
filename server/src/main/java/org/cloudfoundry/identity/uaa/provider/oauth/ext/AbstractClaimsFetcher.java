@@ -101,8 +101,8 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 	 * @param headers
 	 * @return
 	 */
-	protected Map<String, Object> post(AbstractXOAuthIdentityProviderDefinition config,
-			MultiValueMap<String, String> body, HttpHeaders headers) {
+	protected Map<String, Object> restHttp(AbstractXOAuthIdentityProviderDefinition config,
+			MultiValueMap<String, String> body, HttpHeaders headers, HttpMethod method) {
 		URI requestUri;
 		HttpEntity requestEntity = new HttpEntity<>(body, headers);
 		try {
@@ -115,7 +115,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 			if (config.isSkipSslValidation()) {
 				restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
 			}
-			ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUri, HttpMethod.POST,
+			ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUri, method,
 					requestEntity, new ParameterizedTypeReference<Map<String, Object>>() {
 					});
 			return responseEntity.getBody();
