@@ -290,12 +290,18 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         body.add("response_type", getResponseType(config));
         body.add("code", codeToken.getCode());
         body.add("redirect_uri", codeToken.getRedirectUrl());
-	//body.add("redirect_uri", "http://uaa.dev.agoodme.com/uaa/login/callback/" + codeToken.getOrigin());
-
+        
         HttpHeaders headers = new HttpHeaders();
-        String clientAuthHeader = getClientAuthHeader(config);
-        headers.add("Authorization", clientAuthHeader);
         headers.add("Accept", "application/json");
+
+        String origin = codeToken.getOrigin();
+        if (origin.equals("weixin")) {
+        	body.add("appid", config.getRelyingPartyId());
+        	body.add("secret", config.getRelyingPartySecret());
+        } else {
+        	String clientAuthHeader = getClientAuthHeader(config);
+        	 headers.add("Authorization", clientAuthHeader);
+        }
 
         URI requestUri;
         HttpEntity requestEntity = new HttpEntity<>(body, headers);
@@ -352,4 +358,8 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
             this.authorities = authorities;
         }
     }
+    
+    
+    
+    
 }
