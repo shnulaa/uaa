@@ -69,8 +69,8 @@ import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValida
 
 public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationManager<XOAuthAuthenticationManager.AuthenticationData> {
 
-    private RestTemplate restTemplate = new RestTemplate();
-    private IdentityProviderProvisioning providerProvisioning;
+    protected RestTemplate restTemplate = new RestTemplate();
+    protected IdentityProviderProvisioning providerProvisioning;
 
     public XOAuthAuthenticationManager(IdentityProviderProvisioning providerProvisioning) {
         this.providerProvisioning = providerProvisioning;
@@ -233,7 +233,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         } catch (IllegalStateException x) {
             //nothing bound on thread.
             logger.debug("Unable to retrieve request attributes during SAML authentication.");
-
+  
         }
         return false;
     }
@@ -252,7 +252,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         }
     }
 
-    private Map<String,Object> getClaimsFromToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
+    protected Map<String,Object> getClaimsFromToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
         String idToken = getTokenFromCode(codeToken, config);
         if(idToken == null) {
             return null;
