@@ -63,7 +63,7 @@ public class ExternalOAuthAuthenticationManager extends XOAuthAuthenticationMana
 			return null;
 		}
 
-		AuthType authType = AuthType.valueOf(codeToken.getOrigin());
+		AuthType authType = AuthType.valueOf(origin.toUpperCase());
 		// if google then go super method
 		if (authType == AuthType.GOOGLE) {
 			return super.getClaimsFromToken(codeToken, config);
