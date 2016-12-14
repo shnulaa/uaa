@@ -1,9 +1,7 @@
 package org.cloudfoundry.identity.uaa.provider.oauth.ext;
 
-import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
-import org.cloudfoundry.identity.uaa.provider.oauth.ExternalOAuthAuthenticationManager.AuthType;
-import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
+import org.cloudfoundry.identity.uaa.provider.oauth.ext.ExternalOAuthAuthenticationManager.AuthType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;

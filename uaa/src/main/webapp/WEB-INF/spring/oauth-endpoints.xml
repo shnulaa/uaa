@@ -327,7 +327,7 @@
         <property name="userDatabase" ref="userDatabase"/>
     </bean> -->
     
-    <bean id="xOauthAuthenticationManager" class="org.cloudfoundry.identity.uaa.provider.oauth.ExternalOAuthAuthenticationManager">
+    <bean id="xOauthAuthenticationManager" class="org.cloudfoundry.identity.uaa.provider.oauth.ext.ExternalOAuthAuthenticationManager">
         <constructor-arg name="providerProvisioning" ref="identityProviderProvisioning"/>
         <property name="userDatabase" ref="userDatabase"/>
     </bean>

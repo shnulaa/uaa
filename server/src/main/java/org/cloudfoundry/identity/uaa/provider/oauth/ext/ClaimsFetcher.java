@@ -18,6 +18,6 @@ public interface ClaimsFetcher {
 	 * 
 	 * @return the information of Claims user
 	 */
-	Map<String, Object> getClaimss(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config);
+	Map<String, Object> getClaims(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config);
 
 }

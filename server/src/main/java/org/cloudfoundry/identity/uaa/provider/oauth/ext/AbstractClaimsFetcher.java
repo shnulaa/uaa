@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.xpath.operations.Bool;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
@@ -20,8 +19,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
-
-import com.google.common.collect.Maps;
 
 /**
  * the abstract class of ClaimsFetcher
@@ -71,7 +68,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 	}
 
 	@Override
-	public Map<String, Object> getClaimss(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
+	public Map<String, Object> getClaims(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
 		// first get the token from code
 		Map<String, Object> tokens = getToken(codeToken, config);
 		if (tokens == null || tokens.isEmpty()) {
@@ -79,14 +76,16 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 			return null;
 		}
 
+		// get the access_token and openid from tokens object 
 		String accessToken = (String) tokens.get("access_token");
 		String openId = (String) tokens.get("openid");
 		if (StringUtils.isBlank(accessToken) || StringUtils.isBlank(openId)) {
-			log.error("accessToken or openId is balank..");
+			log.error("accessToken or openId is null or balank..");
 			return null;
 		}
 		log.info("accessToken:%s, openId:%s.", accessToken, openId);
 
+		// get the user information with accessToken and openId
 		Map<String, Object> userInfo = getUserInfo(config, accessToken, openId);
 		if (userInfo == null || userInfo.isEmpty()) {
 			log.error("userInfo is null or isEmpty..");
