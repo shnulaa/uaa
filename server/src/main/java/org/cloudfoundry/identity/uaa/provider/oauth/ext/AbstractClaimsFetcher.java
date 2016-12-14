@@ -2,9 +2,8 @@ package org.cloudfoundry.identity.uaa.provider.oauth.ext;
 
 import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValidatingClientHttpRequestFactory;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.apache.commons.lang.StringUtils;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
@@ -17,10 +16,11 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
+
+import com.google.common.collect.Maps;
 
 /**
  * the abstract class of ClaimsFetcher
@@ -94,28 +94,22 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 	}
 
 	/**
-	 * Post to specified the URL with body
+	 * get to specified the URL with body
 	 * 
 	 * @param config
 	 * @param body
 	 * @param headers
 	 * @return
 	 */
-	protected Map<String, Object> restHttp(AbstractXOAuthIdentityProviderDefinition config,
-			MultiValueMap<String, String> body, HttpHeaders headers, HttpMethod method) {
-		URI requestUri;
-		HttpEntity requestEntity = new HttpEntity<>(body, headers);
-		try {
-			requestUri = config.getTokenUrl().toURI();
-		} catch (URISyntaxException e) {
-			return null;
-		}
-
+	protected Map<String, Object> get(AbstractXOAuthIdentityProviderDefinition config, Map<String, String> paras,
+			HttpHeaders headers) {
+		final String requestUrl = appendUrl(config.getTokenUrl().toString(), paras);
 		try {
 			if (config.isSkipSslValidation()) {
 				restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
 			}
-			ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUri, method,
+			HttpEntity requestEntity = new HttpEntity<>(null, headers);
+			ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUrl, HttpMethod.GET,
 					requestEntity, new ParameterizedTypeReference<Map<String, Object>>() {
 					});
 			return responseEntity.getBody();
@@ -123,6 +117,25 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 			log.error("Http exception occurred when POST..", ex);
 			throw ex;
 		}
+	}
+
+	/**
+	 * appendUrl
+	 * @param baseUrl
+	 * @param paras
+	 * @return
+	 */
+	private String appendUrl(String baseUrl, Map<String, String> paras) {
+		StringBuffer url = new StringBuffer();
+		url.append(baseUrl.toString());
+		url.append("?");
+		for (final Entry<String, String> entry : paras.entrySet()) {
+			url.append(entry.getKey());
+			url.append("=");
+			url.append(entry.getValue());
+			url.append("&");
+		}
+		return url.toString();
 	}
 
 }

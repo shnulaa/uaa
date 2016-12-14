@@ -11,6 +11,8 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.common.collect.Maps;
+
 /**
  * WeiXinClaimsFetcher
  * 
@@ -33,28 +35,28 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
 	@Override
 	protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
-		MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
-		body.add("appid", config.getRelyingPartyId());
-		body.add("secret", config.getRelyingPartySecret());
-		body.add("grant_type", "authorization_code");
-		body.add("code", codeToken.getCode());
+		Map<String, String> paras = Maps.newHashMap();
+		paras.put("appid", config.getRelyingPartyId());
+		paras.put("secret", config.getRelyingPartySecret());
+		paras.put("grant_type", "authorization_code");
+		paras.put("code", codeToken.getCode());
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return restHttp(config, body, headers, HttpMethod.GET);
+		return get(config, paras, headers);
 	}
 
 	@Override
 	protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
 			String openId) {
-		MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
-		body.add("access_token", accessToken);
-		body.add("openid", openId);
-		body.add("lang", "zh_CN");
+		Map<String, String> paras = Maps.newHashMap();
+		paras.put("access_token", accessToken);
+		paras.put("openid", openId);
+		paras.put("lang", "zh_CN");
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("Accept", "application/json");
-		return restHttp(config, body, headers, HttpMethod.GET);
+		return get(config, paras, headers);
 	}
 
 }
