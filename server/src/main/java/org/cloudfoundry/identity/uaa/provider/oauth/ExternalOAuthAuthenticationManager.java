@@ -20,7 +20,6 @@ import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefi
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.ext.ClaimsFetcher;
 import org.cloudfoundry.identity.uaa.provider.oauth.ext.ClaimsFetcherFactory;
-import org.opensaml.xml.signature.impl.RetrievalMethodUnmarshaller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
