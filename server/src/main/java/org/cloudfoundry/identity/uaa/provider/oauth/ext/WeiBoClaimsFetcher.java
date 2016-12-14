@@ -13,31 +13,31 @@ import org.springframework.web.client.RestTemplate;
  * @author liuyq
  *
  */
-public class WeiBoClaimsFetcher extends AbstractClaimsFetcher{
+public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
 
-	/**
-	 * the default constructor
-	 * 
-	 * @param codeToken
-	 *            code token info
-	 * @param config
-	 *            the YML file information
-	 */
-	public WeiBoClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
-		super(restTemplate, providerProvisioning);
-	}
+    /**
+     * the default constructor
+     * 
+     * @param codeToken
+     *            code token info
+     * @param config
+     *            the YML file information
+     */
+    public WeiBoClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
+        super(restTemplate, providerProvisioning);
+    }
 
-	@Override
-	protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	@Override
-	protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
-			String openId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
+            String openId) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

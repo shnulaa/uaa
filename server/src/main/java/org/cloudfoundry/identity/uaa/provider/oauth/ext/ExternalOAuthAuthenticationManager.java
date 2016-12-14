@@ -30,58 +30,58 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class ExternalOAuthAuthenticationManager extends XOAuthAuthenticationManager {
-	/**
-	 * the log instance
-	 */
-	protected final static Logger log = LoggerFactory.getLogger(ExternalOAuthAuthenticationManager.class);
+    /**
+     * the log instance
+     */
+    protected final static Logger log = LoggerFactory.getLogger(ExternalOAuthAuthenticationManager.class);
 
-	/**
-	 * the enum of AuthType
-	 * 
-	 * @author liuyq
-	 *
-	 */
-	public static enum AuthType {
-		WEIXIN, QQ, WEIBO, WEIMENG, GOOGLE
-	}
+    /**
+     * the enum of AuthType
+     * 
+     * @author liuyq
+     *
+     */
+    public static enum AuthType {
+        WEIXIN, QQ, WEIBO, WEIMENG, GOOGLE
+    }
 
-	/**
-	 * default constructor
-	 * 
-	 * @param providerProvisioning
-	 */
-	public ExternalOAuthAuthenticationManager(IdentityProviderProvisioning providerProvisioning) {
-		super(providerProvisioning);
-	}
+    /**
+     * default constructor
+     * 
+     * @param providerProvisioning
+     */
+    public ExternalOAuthAuthenticationManager(IdentityProviderProvisioning providerProvisioning) {
+        super(providerProvisioning);
+    }
 
-	@Override
-	protected Map<String, Object> getClaimsFromToken(XOAuthCodeToken codeToken,
-			AbstractXOAuthIdentityProviderDefinition config) {
-		String origin = codeToken.getOrigin();
-		if (StringUtils.isBlank(origin)) {
-			log.error("given origin is null when getClaimsFromToken.");
-			return null;
-		}
+    @Override
+    protected Map<String, Object> getClaimsFromToken(XOAuthCodeToken codeToken,
+            AbstractXOAuthIdentityProviderDefinition config) {
+        String origin = codeToken.getOrigin();
+        if (StringUtils.isBlank(origin)) {
+            log.error("given origin is null when getClaimsFromToken.");
+            return null;
+        }
 
-		AuthType authType = AuthType.valueOf(origin.toUpperCase());
-		// if google then go super method
-		if (authType == AuthType.GOOGLE) {
-			return super.getClaimsFromToken(codeToken, config);
-		}
+        AuthType authType = AuthType.valueOf(origin.toUpperCase());
+        // if google then go super method
+        if (authType == AuthType.GOOGLE) {
+            return super.getClaimsFromToken(codeToken, config);
+        }
 
-		// get instance of ClaimsFetcher
-		ClaimsFetcher fetcher = ClaimsFetcherFactory.getInstance(authType, restTemplate, providerProvisioning);
-		if (fetcher == null) {
-			log.error("the instance of ClaimsFetcher is null when create..");
-			return null;
-		}
+        // get instance of ClaimsFetcher
+        ClaimsFetcher fetcher = ClaimsFetcherFactory.getInstance(authType, restTemplate, providerProvisioning);
+        if (fetcher == null) {
+            log.error("the instance of ClaimsFetcher is null when create..");
+            return null;
+        }
 
-		try {
-			return fetcher.getClaims(codeToken, config);
-		} catch (Exception e) {
-			log.error("Exception occurred when getClaimss.. ", e);
-		}
-		return null;
-	}
+        try {
+            return fetcher.getClaims(codeToken, config);
+        } catch (Exception e) {
+            log.error("Exception occurred when getClaimss.. ", e);
+        }
+        return null;
+    }
 
 }

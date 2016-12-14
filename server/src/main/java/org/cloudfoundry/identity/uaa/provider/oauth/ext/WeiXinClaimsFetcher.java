@@ -18,42 +18,42 @@ import com.google.common.collect.Maps;
  */
 public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
-	/**
-	 * the default constructor
-	 * 
-	 * @param codeToken
-	 *            code token info
-	 * @param config
-	 *            the YML file information
-	 */
-	public WeiXinClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
-		super(restTemplate, providerProvisioning);
-	}
+    /**
+     * the default constructor
+     * 
+     * @param codeToken
+     *            code token info
+     * @param config
+     *            the YML file information
+     */
+    public WeiXinClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
+        super(restTemplate, providerProvisioning);
+    }
 
-	@Override
-	protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
-		Map<String, String> paras = Maps.newHashMap();
-		paras.put("appid", config.getRelyingPartyId());
-		paras.put("secret", config.getRelyingPartySecret());
-		paras.put("grant_type", "authorization_code");
-		paras.put("code", codeToken.getCode());
+    @Override
+    protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
+        Map<String, String> paras = Maps.newHashMap();
+        paras.put("appid", config.getRelyingPartyId());
+        paras.put("secret", config.getRelyingPartySecret());
+        paras.put("grant_type", "authorization_code");
+        paras.put("code", codeToken.getCode());
 
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Accept", "application/json");
-		return get(config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
-	}
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        return get(config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
+    }
 
-	@Override
-	protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
-			String openId) {
-		Map<String, String> paras = Maps.newHashMap();
-		paras.put("access_token", accessToken);
-		paras.put("openid", openId);
-		paras.put("lang", "zh_CN");
+    @Override
+    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
+            String openId) {
+        Map<String, String> paras = Maps.newHashMap();
+        paras.put("access_token", accessToken);
+        paras.put("openid", openId);
+        paras.put("lang", "zh_CN");
 
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("Accept", "application/json");
-		return get(config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
-	}
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        return get(config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
+    }
 
 }
