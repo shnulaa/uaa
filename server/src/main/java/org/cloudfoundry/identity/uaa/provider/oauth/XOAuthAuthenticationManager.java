@@ -69,8 +69,8 @@ import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValida
 
 public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationManager<XOAuthAuthenticationManager.AuthenticationData> {
 
-    protected RestTemplate restTemplate = new RestTemplate();
-    protected IdentityProviderProvisioning providerProvisioning;
+    private RestTemplate restTemplate = new RestTemplate();
+    private IdentityProviderProvisioning providerProvisioning;
 
     public XOAuthAuthenticationManager(IdentityProviderProvisioning providerProvisioning) {
         this.providerProvisioning = providerProvisioning;
@@ -233,7 +233,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         } catch (IllegalStateException x) {
             //nothing bound on thread.
             logger.debug("Unable to retrieve request attributes during SAML authentication.");
-  
+
         }
         return false;
     }
@@ -252,7 +252,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         }
     }
 
-    protected Map<String,Object> getClaimsFromToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
+    private Map<String,Object> getClaimsFromToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
         String idToken = getTokenFromCode(codeToken, config);
         if(idToken == null) {
             return null;
@@ -290,18 +290,11 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         body.add("response_type", getResponseType(config));
         body.add("code", codeToken.getCode());
         body.add("redirect_uri", codeToken.getRedirectUrl());
-        
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Accept", "application/json");
 
-        String origin = codeToken.getOrigin();
-        if (origin.equals("weixin")) {
-        	body.add("appid", config.getRelyingPartyId());
-        	body.add("secret", config.getRelyingPartySecret());
-        } else {
-        	String clientAuthHeader = getClientAuthHeader(config);
-        	 headers.add("Authorization", clientAuthHeader);
-        }
+        HttpHeaders headers = new HttpHeaders();
+        String clientAuthHeader = getClientAuthHeader(config);
+        headers.add("Authorization", clientAuthHeader);
+        headers.add("Accept", "application/json");
 
         URI requestUri;
         HttpEntity requestEntity = new HttpEntity<>(body, headers);
@@ -358,8 +351,4 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
             this.authorities = authorities;
         }
     }
-    
-    
-    
-    
 }
