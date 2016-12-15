@@ -53,7 +53,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      * @return Claims user info map
      */
     protected abstract Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
-            String accessToken, String openId);
+            OAuthOpenIdToken openidToken);
 
     /**
      * the default constructor
@@ -75,18 +75,15 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
             log.error("getToken ret tokens is null or empty..");
             return null;
         }
-
-        // get the access_token and openid from tokens object
-        String accessToken = (String) tokens.get("access_token");
-        String openId = (String) tokens.get("openid");
-        if (StringUtils.isBlank(accessToken) || StringUtils.isBlank(openId)) {
+        
+        OAuthOpenIdToken openIdToken = mapping(tokens);
+        if (openIdToken == null) {
             log.error("accessToken or openId is null or balank..");
             return null;
         }
-        log.info("accessToken:%s, openId:%s.", accessToken, openId);
 
         // get the user information with accessToken and openId
-        Map<String, Object> userInfo = getUserInfo(config, accessToken, openId);
+        Map<String, Object> userInfo = getUserInfo(config, openIdToken);
         if (userInfo == null || userInfo.isEmpty()) {
             log.error("userInfo is null or isEmpty..");
             return null;
@@ -95,12 +92,37 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
     }
 
     /**
+     * mapping to specified object
+     * @param tokens
+     * @return
+     */
+    protected OAuthOpenIdToken mapping(Map<String, Object> map) {
+        final OAuthOpenIdToken openIdToken = new OAuthOpenIdToken();
+        // get the access_token and openid from tokens object
+        String accessToken = (String) map.get("access_token");
+        String openId = (String) map.get("openid");
+        if (StringUtils.isBlank(accessToken) || StringUtils.isBlank(openId)) {
+            return null;
+        }
+        log.info("accessToken:%s, openId:%s.", accessToken, openId);
+
+        openIdToken.setAccessToken(accessToken);
+        openIdToken.setOpenId(openId);
+        openIdToken.setScope((String) map.get("scope"));
+        openIdToken.setExpiresIn((String) map.get("expires_in"));
+        openIdToken.setRefreshToken((String) map.get("refresh_token"));
+        openIdToken.setUnionId((String) map.get("unionid"));
+        return openIdToken;
+
+    }
+
+    /**
      * get to specified the URL with body
      * 
      * @param config
      * @param body
      * @param headers
-     * @return
+     * @return response map
      */
     protected Map<String, Object> get(boolean skipSsl, String baseUrl, Map<String, String> paras, HttpHeaders headers) {
         final String requestUrl = appendUrl(baseUrl, paras);

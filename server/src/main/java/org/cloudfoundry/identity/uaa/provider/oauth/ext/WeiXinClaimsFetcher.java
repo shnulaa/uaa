@@ -19,6 +19,11 @@ import com.google.common.collect.Maps;
 public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
 
     /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = -5169989744530750966L;
+
+    /**
      * the default constructor
      * 
      * @param codeToken
@@ -44,11 +49,11 @@ public class WeiXinClaimsFetcher extends AbstractClaimsFetcher {
     }
 
     @Override
-    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
-            String openId) {
+    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
+            OAuthOpenIdToken openidToken) {
         Map<String, String> paras = Maps.newHashMap();
-        paras.put("access_token", accessToken);
-        paras.put("openid", openId);
+        paras.put("access_token", openidToken.getAccessToken());
+        paras.put("openid", openidToken.getOpenId());
         paras.put("lang", "zh_CN");
 
         HttpHeaders headers = new HttpHeaders();

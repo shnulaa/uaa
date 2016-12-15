@@ -8,12 +8,17 @@ import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * WeiXinClaimsFetcher
+ * WeiMengClaimsFetcher
  * 
  * @author liuyq
  *
  */
 public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
+
+    /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = -8396885960295818190L;
 
     /**
      * the default constructor
@@ -34,8 +39,8 @@ public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
     }
 
     @Override
-    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config, String accessToken,
-            String openId) {
+    protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
+            OAuthOpenIdToken openidToken) {
         // TODO Auto-generated method stub
         return null;
     }
