@@ -148,7 +148,7 @@ subprojects {
 
   artifacts {
     archives packageSources
-    archives javadocJar
+    //archives javadocJar
   }
   repositories {
     maven { url "http://maven.springframework.org/release" }
