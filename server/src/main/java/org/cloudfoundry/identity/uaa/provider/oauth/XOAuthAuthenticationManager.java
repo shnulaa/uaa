@@ -13,7 +13,26 @@
 
 package org.cloudfoundry.identity.uaa.provider.oauth;
 
-import com.fasterxml.jackson.core.type.TypeReference;
+import static org.cloudfoundry.identity.uaa.oauth.token.CompositeAccessToken.ID_TOKEN;
+import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.GROUP_ATTRIBUTE_NAME;
+import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.USER_NAME_ATTRIBUTE_NAME;
+import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.EXTERNAL_ID_ATTRIBUTE_NAME;
+import static org.cloudfoundry.identity.uaa.util.TokenValidation.validate;
+import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValidatingClientHttpRequestFactory;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.commons.codec.binary.Base64;
 import org.cloudfoundry.identity.uaa.authentication.UaaAuthentication;
 import org.cloudfoundry.identity.uaa.authentication.manager.ExternalGroupAuthorizationEvent;
@@ -48,24 +67,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import static org.cloudfoundry.identity.uaa.oauth.token.CompositeAccessToken.ID_TOKEN;
-import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.GROUP_ATTRIBUTE_NAME;
-import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.USER_NAME_ATTRIBUTE_NAME;
-import static org.cloudfoundry.identity.uaa.util.TokenValidation.validate;
-import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValidatingClientHttpRequestFactory;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationManager<XOAuthAuthenticationManager.AuthenticationData> {
 
@@ -103,9 +105,13 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
             } else {
                 username = (String) claims.get("preferred_username");
             }
-
             authenticationData.setUsername(username);
 
+            String externalIdAttributePrefix = (String) attributeMappings.get(EXTERNAL_ID_ATTRIBUTE_NAME);
+            if (StringUtils.hasText(externalIdAttributePrefix)) {
+                String externalId = (String) claims.get(externalIdAttributePrefix);
+                authenticationData.setExternalId(externalId);
+            }
             authenticationData.setAuthorities(extractXOAuthUserAuthorities(attributeMappings, claims));
 
             return authenticationData;
@@ -150,7 +156,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
                 .withCreated(new Date())
                 .withOrigin(getOrigin())
                  // .withExternalId(null)
-                .withExternalId((String) claims.get("openid"))
+                .withExternalId(authenticationData.getExternalId())
                 .withVerified(true)
                 .withZoneId(IdentityZoneHolder.get().getId())
                 .withSalt(null)
@@ -326,6 +332,7 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
         private Map<String, Object> claims;
         private String username;
         private List<? extends GrantedAuthority> authorities;
+        private String externalId;
 
         public void setClaims(Map<String,Object> claims) {
             this.claims = claims;
@@ -350,6 +357,14 @@ public class XOAuthAuthenticationManager extends ExternalLoginAuthenticationMana
 
         public void setAuthorities(List<? extends GrantedAuthority> authorities) {
             this.authorities = authorities;
+        }
+
+        public String getExternalId() {
+            return externalId;
+        }
+
+        public void setExternalId(String externalId) {
+            this.externalId = externalId;
         }
     }
 }
