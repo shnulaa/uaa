@@ -75,7 +75,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
             log.error("getToken ret tokens is null or empty..");
             return null;
         }
-        
+
         OAuthOpenIdToken openIdToken = mapping(tokens);
         if (openIdToken == null) {
             log.error("accessToken or openId is null or balank..");
@@ -93,6 +93,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 
     /**
      * mapping to specified object
+     * 
      * @param tokens
      * @return
      */
@@ -104,16 +105,15 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
         if (StringUtils.isBlank(accessToken) || StringUtils.isBlank(openId)) {
             return null;
         }
-        log.info("accessToken:%s, openId:%s.", accessToken, openId);
+        log.info("accessToken:" + accessToken + ", openId:" + openId + ".");
 
         openIdToken.setAccessToken(accessToken);
         openIdToken.setOpenId(openId);
         openIdToken.setScope((String) map.get("scope"));
-        openIdToken.setExpiresIn((String) map.get("expires_in"));
+        openIdToken.setExpiresIn((Integer) map.get("expires_in"));
         openIdToken.setRefreshToken((String) map.get("refresh_token"));
         openIdToken.setUnionId((String) map.get("unionid"));
         return openIdToken;
-
     }
 
     /**

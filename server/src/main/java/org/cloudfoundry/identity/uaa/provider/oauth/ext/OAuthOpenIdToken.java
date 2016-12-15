@@ -15,7 +15,7 @@ public class OAuthOpenIdToken implements Serializable {
     private static final long serialVersionUID = 8687847628371698805L;
 
     private String accessToken;
-    private String expiresIn;
+    private Integer expiresIn;
     private String refreshToken;
     private String openId;
     private String scope;
@@ -29,11 +29,11 @@ public class OAuthOpenIdToken implements Serializable {
         this.accessToken = accessToken;
     }
 
-    public String getExpiresIn() {
+    public Integer getExpiresIn() {
         return expiresIn;
     }
 
-    public void setExpiresIn(String expiresIn) {
+    public void setExpiresIn(Integer expiresIn) {
         this.expiresIn = expiresIn;
     }
 
