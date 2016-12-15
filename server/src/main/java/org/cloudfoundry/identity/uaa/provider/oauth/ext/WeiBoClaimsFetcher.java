@@ -43,6 +43,7 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
         paras.put("client_secret", config.getRelyingPartySecret());
         paras.put("grant_type", "authorization_code");
         paras.put("code", codeToken.getCode());
+        paras.put("redirect_uri", codeToken.getRedirectUrl());
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
