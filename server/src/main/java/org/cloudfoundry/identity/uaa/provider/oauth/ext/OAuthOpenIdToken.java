@@ -20,6 +20,7 @@ public class OAuthOpenIdToken implements Serializable {
     private String openId;
     private String scope;
     private String unionId;
+    private String uid;
 
     public String getAccessToken() {
         return accessToken;
@@ -67,6 +68,14 @@ public class OAuthOpenIdToken implements Serializable {
 
     public void setUnionId(String unionId) {
         this.unionId = unionId;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
 }

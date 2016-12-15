@@ -99,20 +99,13 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      */
     protected OAuthOpenIdToken mapping(Map<String, Object> map) {
         final OAuthOpenIdToken openIdToken = new OAuthOpenIdToken();
-        // get the access_token and openid from tokens object
-        String accessToken = (String) map.get("access_token");
-        String openId = (String) map.get("openid");
-        if (StringUtils.isBlank(accessToken) || StringUtils.isBlank(openId)) {
-            return null;
-        }
-        log.info("accessToken:" + accessToken + ", openId:" + openId + ".");
-
-        openIdToken.setAccessToken(accessToken);
-        openIdToken.setOpenId(openId);
+        openIdToken.setAccessToken((String) map.get("access_token"));
+        openIdToken.setOpenId((String) map.get("openid")); // weixin
         openIdToken.setScope((String) map.get("scope"));
         openIdToken.setExpiresIn((Integer) map.get("expires_in"));
         openIdToken.setRefreshToken((String) map.get("refresh_token"));
-        openIdToken.setUnionId((String) map.get("unionid"));
+        openIdToken.setUnionId((String) map.get("unionid")); // weixin
+        openIdToken.setUid((String) map.get("uid")); //weibo
         return openIdToken;
     }
 
