@@ -6,6 +6,7 @@ import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefi
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.common.collect.Maps;
@@ -45,7 +46,7 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
-        return get(config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
+        return restHttp(HttpMethod.POST, config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
     }
 
     @Override
@@ -57,7 +58,7 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
-        return get(config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
+        return restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
     }
 
 }

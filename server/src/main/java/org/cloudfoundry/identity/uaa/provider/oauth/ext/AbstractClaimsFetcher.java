@@ -105,7 +105,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
         openIdToken.setExpiresIn((Integer) map.get("expires_in"));
         openIdToken.setRefreshToken((String) map.get("refresh_token"));
         openIdToken.setUnionId((String) map.get("unionid")); // weixin
-        openIdToken.setUid((String) map.get("uid")); //weibo
+        openIdToken.setUid((String) map.get("uid")); // weibo
         return openIdToken;
     }
 
@@ -117,14 +117,15 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      * @param headers
      * @return response map
      */
-    protected Map<String, Object> get(boolean skipSsl, String baseUrl, Map<String, String> paras, HttpHeaders headers) {
+    protected Map<String, Object> restHttp(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
+            HttpHeaders headers) {
         final String requestUrl = appendUrl(baseUrl, paras);
         try {
             if (skipSsl) {
                 restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
             }
             HttpEntity requestEntity = new HttpEntity<>(null, headers);
-            ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUrl, HttpMethod.GET,
+            ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUrl, method,
                     requestEntity, new ParameterizedTypeReference<Map<String, Object>>() {
                     });
             return responseEntity.getBody();
