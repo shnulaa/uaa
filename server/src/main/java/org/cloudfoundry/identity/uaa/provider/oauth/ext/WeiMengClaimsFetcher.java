@@ -5,7 +5,11 @@ import java.util.Map;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
+
+import com.google.common.collect.Maps;
 
 /**
  * WeiMengClaimsFetcher
@@ -34,15 +38,27 @@ public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
 
     @Override
     protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
-        // TODO Auto-generated method stub
-        return null;
+        Map<String, String> paras = Maps.newHashMap();
+        paras.put("client_id", config.getRelyingPartyId());
+        paras.put("client_secret", config.getRelyingPartySecret());
+        paras.put("grant_type", "authorization_code");
+        paras.put("code", codeToken.getCode());
+        paras.put("redirect_uri", codeToken.getRedirectUrl());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        return restHttp(HttpMethod.POST, config.isSkipSslValidation(), config.getTokenUrl().toString(), paras, headers);
     }
 
     @Override
     protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
             OAuthOpenIdToken openidToken) {
-        // TODO Auto-generated method stub
-        return null;
+        Map<String, String> paras = Maps.newHashMap();
+        paras.put("access_token", openidToken.getAccessToken());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        return restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
     }
 
 }
