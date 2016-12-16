@@ -54,7 +54,7 @@ public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
     protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
             OAuthOpenIdToken openidToken) {
         Map<String, String> paras = Maps.newHashMap();
-        paras.put("access_token", openidToken.getAccessToken());
+        paras.put("accesstoken", openidToken.getAccessToken());
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");

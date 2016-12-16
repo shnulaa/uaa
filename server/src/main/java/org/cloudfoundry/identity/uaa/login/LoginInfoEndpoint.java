@@ -396,9 +396,16 @@ public class LoginInfoEndpoint {
         AuthType authType =AuthType.valueOf(alias.toUpperCase());
         if (authType == AuthType.WEIXIN) {
             query.add("appid=" + definition.getRelyingPartyId());
-        } else {
+        } else  if (authType == AuthType.WEIXIN){} else {
             query.add("client_id=" + definition.getRelyingPartyId());
         }
+
+        // weimeng 
+        if (authType == AuthType.WEIMENG) {
+            query.add("enter=wm");
+            query.add("view=pc");
+        }
+
         query.add("response_type=code");
         String requestURL = request.getRequestURL().toString();
         String rootContext = StringUtils.hasText(request.getServletPath()) ? requestURL.substring(0, requestURL.indexOf(request.getServletPath())) : requestURL;
