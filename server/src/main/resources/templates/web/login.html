@@ -30,7 +30,7 @@
                 <div th:if="${oauthIdp.value.scopes != null}">
                     <a href="" th:href="@{${oauthIdp.value.authUrl}(client_id=${oauthIdp.value.relyingPartyId},response_type=code,redirect_uri=${#httpServletRequest.requestURL + '/callback/' + oauthIdp.key},scope=${#strings.listJoin(oauthIdp.value.scopes,' ')})}" th:text="${oauthIdp.value.linkText}" class="saml-login-link">Use your corporate credentials</a>
                 </div> -->
-                <a href="" th:href="@{'http://uaa.dev.agoodme.com/uaa/oauth/authorize'}(response_type=code,client_id=${oauthIdp.key})}" th:text="${oauthIdp.value.linkText}" class="saml-login-link">Use your corporate credentials</a>
+                <a href="" th:href="@{${'http://uaa.dev.agoodme.com/uaa/oauth/authorize'}(response_type=code,client_id=${oauthIdp.key})}" th:text="${oauthIdp.value.linkText}" class="saml-login-link">Use your corporate credentials</a>
             </div>
         </div>
         <th:block th:if="${linkCreateAccountShow}">
