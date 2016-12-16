@@ -112,8 +112,8 @@ login:
         relyingPartySecret: "757d9e44cd6c55fc0ae413f82294c6d2"
         skipSslValidation: false
         attributeMappings:
-          user_name: unionid
-          external_id: openid
+          user_name: idstr
+          external_id: idstr
       weimeng:
         type: oidc1.0
         authUrl: https://dopen.weimob.com/fuwu/b/oauth2/authorize
@@ -129,8 +129,8 @@ login:
         relyingPartySecret: "85397DB46E24D75F89BCD7E31C4EB50C"
         skipSslValidation: false
         attributeMappings:
-          user_name: unionid
-          external_id: openid
+          user_name: pid
+          external_id: pid
   # Enable create account and forgot password links on the Login Server (enabled by default)
   #selfServiceLinksEnabled: true
   #base URL that the login server can be reached at
