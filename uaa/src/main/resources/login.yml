@@ -64,6 +64,73 @@ login:
         skipSslValidation: false
         attributeMappings:
           user_name: email
+      qq:
+        type: oidc1.0
+        authUrl: https://graph.qq.com/oauth2.0/authorize
+        tokenUrl: https://graph.qq.com/oauth2.0/token
+        issuer: https://accounts.google.com
+        redirectUrl: http://localhost:8080/uaa
+        scopes:
+          - get_user_info
+        linkText: Login with qq
+        showLinkText: true
+        addShadowUserOnLogin: true
+        relyingPartyId: "101362793"
+        relyingPartySecret: "5a4731d74e16bb712aca709158280db9"
+        skipSslValidation: false
+        attributeMappings:
+          user_name: email
+      weixin:
+        type: oidc1.0
+        authUrl: https://open.weixin.qq.com/connect/qrconnect
+        tokenUrl: https://api.weixin.qq.com/sns/oauth2/access_token
+        issuer: https://api.weixin.qq.com/sns/userinfo
+        redirectUrl: http://localhost:8080/uaa
+        scopes:
+          - snsapi_login
+        linkText: Login with weixin
+        showLinkText: true
+        addShadowUserOnLogin: true
+        relyingPartyId: "wx317dc2d538a86596"
+        relyingPartySecret: "58cd690ba74ba2e476ca0b42b53e850f"
+        skipSslValidation: false
+        attributeMappings:
+          user_name: unionid
+          external_id: openid
+      weibo:
+        type: oidc1.0
+        authUrl: https://api.weibo.com/oauth2/authorize
+        tokenUrl: https://api.weibo.com/oauth2/access_token
+        issuer: https://api.weibo.com/2/users/show.json
+        redirectUrl: http://localhost:8080/uaa
+        scopes:
+          - snsapi_login
+        linkText: Login with weibo
+        showLinkText: true
+        addShadowUserOnLogin: true
+        relyingPartyId: "4291611585"
+        relyingPartySecret: "757d9e44cd6c55fc0ae413f82294c6d2"
+        skipSslValidation: false
+        attributeMappings:
+          user_name: unionid
+          external_id: openid
+      weimeng:
+        type: oidc1.0
+        authUrl: https://dopen.weimob.com/fuwu/b/oauth2/authorize
+        tokenUrl: https://dopen.weimob.com/fuwu/b/oauth2/token
+        issuer: http://dopen.weimob.com/api/1_0/open/usercenter/getWeimobUserInfo
+        redirectUrl: http://localhost:8080/uaa
+        scopes:
+          - default
+        linkText: Login with weimeng
+        showLinkText: true
+        addShadowUserOnLogin: true
+        relyingPartyId: "29729E6281A0FC72CD6277DDAC15CCCA"
+        relyingPartySecret: "85397DB46E24D75F89BCD7E31C4EB50C"
+        skipSslValidation: false
+        attributeMappings:
+          user_name: unionid
+          external_id: openid
   # Enable create account and forgot password links on the Login Server (enabled by default)
   #selfServiceLinksEnabled: true
   #base URL that the login server can be reached at
