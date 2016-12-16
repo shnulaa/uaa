@@ -51,6 +51,7 @@ public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     protected Map<String, Object> getUserInfo(AbstractXOAuthIdentityProviderDefinition config,
             OAuthOpenIdToken openidToken) {
         Map<String, String> paras = Maps.newHashMap();
@@ -58,7 +59,9 @@ public class WeiMengClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
-        return restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
+        Map<String, Object> userInfo = restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
+
+        return (Map<String, Object>)userInfo.get("data");
     }
 
 }

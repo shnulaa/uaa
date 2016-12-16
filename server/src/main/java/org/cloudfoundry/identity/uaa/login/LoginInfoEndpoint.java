@@ -393,14 +393,15 @@ public class LoginInfoEndpoint {
 
         String queryAppendDelimiter = authUrlBase.contains("?") ? "&" : "?";
         List<String> query = new ArrayList<>();
-        AuthType authType =AuthType.valueOf(alias.toUpperCase());
+
+        AuthType authType = AuthType.valueOf(alias.toUpperCase());
         if (authType == AuthType.WEIXIN) {
             query.add("appid=" + definition.getRelyingPartyId());
         } else  if (authType == AuthType.WEIXIN){} else {
             query.add("client_id=" + definition.getRelyingPartyId());
         }
 
-        // weimeng 
+        // weimeng add external parameter
         if (authType == AuthType.WEIMENG) {
             query.add("enter=wm");
             query.add("view=pc");
