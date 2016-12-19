@@ -8,6 +8,7 @@ import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.common.collect.Maps;
@@ -47,7 +48,8 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         tokenParas.put("redirect_uri", codeToken.getRedirectUrl());
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Accept", "application/json");
+        // headers.add("Accept", "application/json");
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         Map<String, Object> tokenMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
                 config.getTokenUrl().toString(), tokenParas, headers);
@@ -89,7 +91,8 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         paras.put("oauth_consumer_key", config.getRelyingPartyId());
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Accept", "application/json");
+        // headers.add("Accept", "application/json");
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         final String userInfoUrl = config.getIssuer();
 
