@@ -63,12 +63,12 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         Map<String, Object> openIdMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
                 config.getTokenKeyUrl().toString(), openIdParas, headers);
 
-        Object callbackMap =  openIdMap.get("callback");
+        Object callbackMap = openIdMap.get("callback");
         if (callbackMap == null) {
             log.error("openid is empty or null when fetch qq openid.");
             return null;
         }
-        tokenMap.putAll((Map<String, Object>)callbackMap);
+        tokenMap.putAll((Map<String, Object>) callbackMap);
         return tokenMap;
     }
 
@@ -92,6 +92,9 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         headers.add("Accept", "application/json");
 
         final String userInfoUrl = config.getIssuer();
-        return restHttp(HttpMethod.GET, config.isSkipSslValidation(), userInfoUrl, paras, headers);
+
+        Map<String, Object> map = restHttp(HttpMethod.GET, config.isSkipSslValidation(), userInfoUrl, paras, headers);
+        map.put("openId", openId);
+        return map;
     }
 }

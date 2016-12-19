@@ -68,18 +68,19 @@ login:
         type: oidc1.0
         authUrl: https://graph.qq.com/oauth2.0/authorize
         tokenUrl: https://graph.qq.com/oauth2.0/token
-        issuer: https://accounts.google.com
+        tokenKeyUrl: https://graph.qq.com/oauth2.0/me
+        issuer: https://graph.qq.com/user/get_user_info
         redirectUrl: http://localhost:8080/uaa
         scopes:
           - get_user_info
         linkText: Login with qq
         showLinkText: true
         addShadowUserOnLogin: true
-        relyingPartyId: "101362793"
-        relyingPartySecret: "5a4731d74e16bb712aca709158280db9"
+        relyingPartyId: "101373768"
+        relyingPartySecret: "2ca32ca23198bdc148753251b3178763"
         skipSslValidation: false
         attributeMappings:
-          user_name: email
+          user_name: openId
       weixin:
         type: oidc1.0
         authUrl: https://open.weixin.qq.com/connect/qrconnect
