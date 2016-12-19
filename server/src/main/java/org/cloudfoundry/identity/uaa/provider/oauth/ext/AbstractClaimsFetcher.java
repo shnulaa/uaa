@@ -67,8 +67,8 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      */
     public AbstractClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
         this.restTemplate = restTemplate;
-        this.restTemplate.getMessageConverters().add(new WxMappingJackson2HttpMessageConverter());
         this.restTemplate.getMessageConverters().add(new WxFormHttpMessageConverter());
+        this.restTemplate.getMessageConverters().add(new WxMappingJackson2HttpMessageConverter());
         this.providerProvisioning = providerProvisioning;
     }
 
