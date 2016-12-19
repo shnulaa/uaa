@@ -49,7 +49,7 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         // headers.add("Accept", "application/json");
-        headers.setContentType(MediaType.TEXT_HTML);
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         Map<String, Object> tokenMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
                 config.getTokenUrl().toString(), tokenParas, headers);
@@ -92,7 +92,7 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         // headers.add("Accept", "application/json");
-        headers.setContentType(MediaType.TEXT_HTML);
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
         final String userInfoUrl = config.getIssuer();
 
