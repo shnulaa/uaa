@@ -71,13 +71,24 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         //////////////////////////////////////////////////////////
         ////////////////////// fetch QQ OpenId/////////////////////
         //////////////////////////////////////////////////////////
-        MultiValueMap<String, String> openIdBody = new LinkedMultiValueMap<>();
-        openIdBody.add("access_token", accessToken);
+        // MultiValueMap<String, String> openIdBody = new
+        // LinkedMultiValueMap<>();
+        // openIdBody.add("access_token", accessToken);
+        //
+        // MultiValueMap<String, Object> openIdMap =
+        // restHttpForm(config.isSkipSslValidation(),
+        // config.getTokenKeyUrl().toString(), openIdBody, headers);
+        //
+        // retMap.put("openid", openIdMap.getFirst("openid")); // add openid
 
-        MultiValueMap<String, Object> openIdMap = restHttpForm(config.isSkipSslValidation(),
-                config.getTokenKeyUrl().toString(), openIdBody, headers);
+        HttpHeaders headerJsons = new HttpHeaders();
+        headers.add("Accept", "application/json");
+        Map<String, String> paras = Maps.newHashMap();
+        paras.put("access_token", accessToken);
+        Map<String, Object> openIdMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
+                config.getTokenKeyUrl().toString(), paras, headerJsons);
+        retMap.put("openid", openIdMap.get("openid")); // add openid
 
-        retMap.put("openid", openIdMap.getFirst("openid")); // add openid
         return retMap;
     }
 
