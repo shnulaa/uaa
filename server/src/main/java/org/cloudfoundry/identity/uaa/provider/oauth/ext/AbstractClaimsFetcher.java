@@ -29,6 +29,11 @@ import org.springframework.web.client.RestTemplate;
 public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 
     /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = -7942851957617006328L;
+
+    /**
      * the log instance
      */
     protected final static Logger log = LoggerFactory.getLogger(AbstractClaimsFetcher.class);
