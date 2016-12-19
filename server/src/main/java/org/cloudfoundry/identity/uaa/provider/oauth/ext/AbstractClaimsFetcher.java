@@ -15,6 +15,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -113,30 +114,32 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
         openIdToken.setUid((String) map.get("uid")); // weibo
         return openIdToken;
     }
-//    
-//    /**
-//     * get to specified the URL with body
-//     * 
-//     * @param config
-//     * @param body
-//     * @param headers
-//     * @return response map
-//     */
-//    protected String restHttpForm(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
-//            HttpHeaders headers) {
-//        final String requestUrl = appendUrl(baseUrl, paras);
-//        try {
-//            if (skipSsl) {
-//                restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
-//            }
-//            HttpEntity requestEntity = new HttpEntity<>(null, headers);
-//            ResponseEntity<String>  responseEntity = restTemplate.postForEntity(requestUrl, paras, String.class);
-//            return responseEntity.getBody();
-//        } catch (HttpServerErrorException | HttpClientErrorException ex) {
-//            log.error("Http exception occurred when POST..", ex);
-//            throw ex;
-//        }
-//    }
+    //
+    // /**
+    // * get to specified the URL with body
+    // *
+    // * @param config
+    // * @param body
+    // * @param headers
+    // * @return response map
+    // */
+    // protected String restHttpForm(HttpMethod method, boolean skipSsl, String
+    // baseUrl, Map<String, String> paras,
+    // HttpHeaders headers) {
+    // final String requestUrl = appendUrl(baseUrl, paras);
+    // try {
+    // if (skipSsl) {
+    // restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
+    // }
+    // HttpEntity requestEntity = new HttpEntity<>(null, headers);
+    // ResponseEntity<String> responseEntity =
+    // restTemplate.postForEntity(requestUrl, paras, String.class);
+    // return responseEntity.getBody();
+    // } catch (HttpServerErrorException | HttpClientErrorException ex) {
+    // log.error("Http exception occurred when POST..", ex);
+    // throw ex;
+    // }
+    // }
 
     /**
      * get to specified the URL with body
@@ -146,12 +149,16 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      * @param headers
      * @return response map
      */
-    protected Map<String, Object> restHttp(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
-            HttpHeaders headers) {
+    protected Map<String, Object> restHttp(HttpMethod method, boolean skipSsl, String baseUrl,
+            Map<String, String> paras, HttpHeaders headers) {
         final String requestUrl = appendUrl(baseUrl, paras);
         try {
             if (skipSsl) {
                 restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
+            }
+
+            if (this instanceof QQClaimsFetcher) {
+                return restTemplate.getForObject(requestUrl, null, MultiValueMap.class);
             }
             HttpEntity requestEntity = new HttpEntity<>(null, headers);
             ResponseEntity<Map<String, Object>> responseEntity = restTemplate.exchange(requestUrl, method,
