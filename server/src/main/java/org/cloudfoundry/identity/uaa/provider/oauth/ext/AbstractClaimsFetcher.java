@@ -113,6 +113,30 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
         openIdToken.setUid((String) map.get("uid")); // weibo
         return openIdToken;
     }
+    
+    /**
+     * get to specified the URL with body
+     * 
+     * @param config
+     * @param body
+     * @param headers
+     * @return response map
+     */
+//    protected Map<String, Object> restHttpForm(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
+//            HttpHeaders headers) {
+//        final String requestUrl = appendUrl(baseUrl, paras);
+//        try {
+//            if (skipSsl) {
+//                restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
+//            }
+//            HttpEntity requestEntity = new HttpEntity<>(null, headers);
+//            ResponseEntity<String>  responseEntity = restTemplate.postForEntity(requestUrl, null, String.class);
+//            return responseEntity.getBody();
+//        } catch (HttpServerErrorException | HttpClientErrorException ex) {
+//            log.error("Http exception occurred when POST..", ex);
+//            throw ex;
+//        }
+//    }
 
     /**
      * get to specified the URL with body
