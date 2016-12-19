@@ -452,10 +452,14 @@
     <bean id="revocableTokenProvisioning" class="org.cloudfoundry.identity.uaa.oauth.token.JdbcRevocableTokenProvisioning">
         <constructor-arg name="jdbcTemplate" ref="jdbcTemplate"/>
     </bean>
+    
+    <bean id="uaaTokenEnhancerImpl" class="org.cloudfoundry.identity.uaa.oauth.UaaTokenEnhancerImpl">
+    </bean>
 
     <bean id="tokenServices" class="org.cloudfoundry.identity.uaa.oauth.UaaTokenServices">
         <property name="clientDetailsService" ref="jdbcClientDetailsService" />
         <property name="userDatabase" ref="userDatabase" />
+        <property name="uaaTokenEnhancer" ref="uaaTokenEnhancerImpl" />
         <property name="defaultUserAuthorities" ref="defaultUserAuthorities" />
         <property name="issuer" value="${issuer.uri:http://localhost:8080/uaa}" />
         <property name="approvalStore" ref="approvalStore" />

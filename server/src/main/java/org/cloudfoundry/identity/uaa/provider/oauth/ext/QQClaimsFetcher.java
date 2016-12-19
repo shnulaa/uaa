@@ -1,6 +1,8 @@
 package org.cloudfoundry.identity.uaa.provider.oauth.ext;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.commons.lang.StringUtils;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
@@ -71,23 +73,17 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         //////////////////////////////////////////////////////////
         ////////////////////// fetch QQ OpenId/////////////////////
         //////////////////////////////////////////////////////////
-        // MultiValueMap<String, String> openIdBody = new
-        // LinkedMultiValueMap<>();
-        // openIdBody.add("access_token", accessToken);
-        //
-        // MultiValueMap<String, Object> openIdMap =
-        // restHttpForm(config.isSkipSslValidation(),
-        // config.getTokenKeyUrl().toString(), openIdBody, headers);
-        //
-        // retMap.put("openid", openIdMap.getFirst("openid")); // add openid
+        MultiValueMap<String, String> openIdBody = new LinkedMultiValueMap<>();
+        openIdBody.add("access_token", accessToken);
 
-        HttpHeaders headerJsons = new HttpHeaders();
-        headers.add("Accept", "application/json");
-        Map<String, String> paras = Maps.newHashMap();
-        paras.put("access_token", accessToken);
-        Map<String, Object> openIdMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
-                config.getTokenKeyUrl().toString(), paras, headerJsons);
-        retMap.put("openid", openIdMap.get("openid")); // add openid
+        String result = restHttpString(config.isSkipSslValidation(), config.getTokenKeyUrl().toString(), openIdBody,
+                headers);
+        if (StringUtils.isBlank(result)) {
+            log.error("openid is empty or null when fetch qq openid.");
+            return null;
+        }
+
+        // retMap.put("openid", openIdMap.getFirst("openid")); // add openid
 
         return retMap;
     }
@@ -116,5 +112,20 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         Map<String, Object> map = restHttp(HttpMethod.GET, config.isSkipSslValidation(), userInfoUrl, paras, headers);
         map.put("openId", openId);
         return map;
+    }
+
+    public static void main(String[] args) {
+        String line = "callback( {\"client_id\":\"YOUR_APPID\",\"openid\":\"YOUR_OPENID\"} )";
+
+        String regx = "/(?<=\"openid\":\")(.*?)(?=\")/";
+
+        Pattern r = Pattern.compile(regx);
+        Matcher m = r.matcher(line);
+
+        if (m.find()) {
+            System.out.println("Found value: " + m.group(0));
+        } else {
+            System.out.println("NO MATCH");
+        }
     }
 }

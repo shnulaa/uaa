@@ -123,6 +123,28 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
      * @param headers
      * @return response map
      */
+    protected String restHttpString(boolean skipSsl, String baseUrl, MultiValueMap<String, String> paras,
+            HttpHeaders headers) {
+        try {
+            if (skipSsl) {
+                restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
+            }
+            ResponseEntity<String> entity = restTemplate.postForEntity(baseUrl, paras, String.class);
+            return entity.getBody();
+        } catch (HttpServerErrorException | HttpClientErrorException ex) {
+            log.error("Http exception occurred when POST..", ex);
+            throw ex;
+        }
+    }
+
+    /**
+     * get to specified the URL with body
+     *
+     * @param config
+     * @param body
+     * @param headers
+     * @return response map
+     */
     protected MultiValueMap<String, Object> restHttpForm(boolean skipSsl, String baseUrl,
             MultiValueMap<String, String> paras, HttpHeaders headers) {
         try {
