@@ -9,6 +9,8 @@ import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.google.common.collect.Maps;
@@ -40,38 +42,43 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
 
     @Override
     protected Map<String, Object> getToken(XOAuthCodeToken codeToken, AbstractXOAuthIdentityProviderDefinition config) {
-        Map<String, String> tokenParas = Maps.newHashMap();
-        tokenParas.put("client_id", config.getRelyingPartyId());
-        tokenParas.put("client_secret", config.getRelyingPartySecret());
-        tokenParas.put("grant_type", "authorization_code");
-        tokenParas.put("code", codeToken.getCode());
-        tokenParas.put("redirect_uri", codeToken.getRedirectUrl());
+        // retMap return the access_token and openid
+        Map<String, Object> retMap = Maps.newHashMap();
+
+        //////////////////////////////////////////////////////////
+        ////////////////////// fetch QQ token/////////////////////
+        //////////////////////////////////////////////////////////
+        MultiValueMap<String, String> body = new LinkedMultiValueMap<>();
+        body.add("client_id", config.getRelyingPartyId());
+        body.add("client_secret", config.getRelyingPartySecret());
+        body.add("grant_type", "authorization_code");
+        body.add("code", codeToken.getCode());
+        body.add("redirect_uri", codeToken.getRedirectUrl());
 
         HttpHeaders headers = new HttpHeaders();
-        // headers.add("Accept", "application/json");
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
 
-        Map<String, Object> tokenMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
-                config.getTokenUrl().toString(), tokenParas, headers);
+        MultiValueMap<String, Object> tokenMap = restHttpForm(config.isSkipSslValidation(),
+                config.getTokenUrl().toString(), body, headers);
 
-        String accessToken = (String) tokenMap.get("access_token");
+        String accessToken = (String) tokenMap.getFirst("access_token");
         if (StringUtils.isBlank(accessToken)) {
             log.error("accessToken is empty or null when fetch qq token.");
             return null;
         }
+        retMap.put("access_token", accessToken); // add access_token
 
-        Map<String, String> openIdParas = Maps.newHashMap();
-        openIdParas.put("access_token", (String) tokenMap.get("access_token"));
-        Map<String, Object> openIdMap = restHttp(HttpMethod.GET, config.isSkipSslValidation(),
-                config.getTokenKeyUrl().toString(), openIdParas, headers);
+        //////////////////////////////////////////////////////////
+        ////////////////////// fetch QQ OpenId/////////////////////
+        //////////////////////////////////////////////////////////
+        MultiValueMap<String, String> openIdBody = new LinkedMultiValueMap<>();
+        openIdBody.add("access_token", accessToken);
 
-        Object callbackMap = openIdMap.get("callback");
-        if (callbackMap == null) {
-            log.error("openid is empty or null when fetch qq openid.");
-            return null;
-        }
-        tokenMap.putAll((Map<String, Object>) callbackMap);
-        return tokenMap;
+        MultiValueMap<String, Object> openIdMap = restHttpForm(config.isSkipSslValidation(),
+                config.getTokenKeyUrl().toString(), openIdBody, headers);
+
+        retMap.put("openid", openIdMap.getFirst("openid")); // add openid
+        return retMap;
     }
 
     @Override
@@ -91,8 +98,7 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         paras.put("oauth_consumer_key", config.getRelyingPartyId());
 
         HttpHeaders headers = new HttpHeaders();
-        // headers.add("Accept", "application/json");
-        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        headers.add("Accept", "application/json");
 
         final String userInfoUrl = config.getIssuer();
 
