@@ -5,7 +5,6 @@ import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValida
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.lang.StringUtils;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
@@ -69,6 +68,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
     public AbstractClaimsFetcher(RestTemplate restTemplate, IdentityProviderProvisioning providerProvisioning) {
         this.restTemplate = restTemplate;
         this.restTemplate.getMessageConverters().add(new WxMappingJackson2HttpMessageConverter());
+        this.restTemplate.getMessageConverters().add(new WxFormHttpMessageConverter());
         this.providerProvisioning = providerProvisioning;
     }
 
@@ -113,16 +113,16 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
         openIdToken.setUid((String) map.get("uid")); // weibo
         return openIdToken;
     }
-    
-    /**
-     * get to specified the URL with body
-     * 
-     * @param config
-     * @param body
-     * @param headers
-     * @return response map
-     */
-//    protected Map<String, Object> restHttpForm(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
+//    
+//    /**
+//     * get to specified the URL with body
+//     * 
+//     * @param config
+//     * @param body
+//     * @param headers
+//     * @return response map
+//     */
+//    protected String restHttpForm(HttpMethod method, boolean skipSsl, String baseUrl, Map<String, String> paras,
 //            HttpHeaders headers) {
 //        final String requestUrl = appendUrl(baseUrl, paras);
 //        try {
@@ -130,7 +130,7 @@ public abstract class AbstractClaimsFetcher implements ClaimsFetcher {
 //                restTemplate.setRequestFactory(getNoValidatingClientHttpRequestFactory());
 //            }
 //            HttpEntity requestEntity = new HttpEntity<>(null, headers);
-//            ResponseEntity<String>  responseEntity = restTemplate.postForEntity(requestUrl, null, String.class);
+//            ResponseEntity<String>  responseEntity = restTemplate.postForEntity(requestUrl, paras, String.class);
 //            return responseEntity.getBody();
 //        } catch (HttpServerErrorException | HttpClientErrorException ex) {
 //            log.error("Http exception occurred when POST..", ex);
