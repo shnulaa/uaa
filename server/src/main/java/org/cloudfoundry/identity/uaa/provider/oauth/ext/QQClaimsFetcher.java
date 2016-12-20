@@ -30,6 +30,12 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
      */
     private static final long serialVersionUID = -4118883092983521838L;
 
+    private static final String PREFIX_OPENID = "\"openid\":\"";
+    private static final String SUFIX_OPENID = "\"}";
+
+    private static final String GENDER = "gender";
+    private static final String SEX = "sex";
+
     /**
      * the default constructor
      * 
@@ -70,9 +76,9 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         }
         retMap.put("access_token", accessToken); // add access_token
 
-        //////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////
         ////////////////////// fetch QQ OpenId/////////////////////
-        //////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////
         MultiValueMap<String, String> openIdBody = new LinkedMultiValueMap<>();
         openIdBody.add("access_token", accessToken);
 
@@ -83,8 +89,10 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
             return null;
         }
 
-        // retMap.put("openid", openIdMap.getFirst("openid")); // add openid
-
+        int start = result.indexOf(PREFIX_OPENID) + PREFIX_OPENID.length();
+        int end = result.lastIndexOf(SUFIX_OPENID);
+        final String openid = result.substring(start, end);
+        retMap.put("openid", openid); // add openid
         return retMap;
     }
 
@@ -108,24 +116,34 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
         headers.add("Accept", "application/json");
 
         final String userInfoUrl = config.getIssuer();
-
         Map<String, Object> map = restHttp(HttpMethod.GET, config.isSkipSslValidation(), userInfoUrl, paras, headers);
         map.put("openId", openId);
+        map.put(SEX, mappingGender(map));
+
         return map;
     }
 
-    public static void main(String[] args) {
-        String line = "callback( {\"client_id\":\"YOUR_APPID\",\"openid\":\"YOUR_OPENID\"} )";
-
-        String regx = "/(?<=\"openid\":\")(.*?)(?=\")/";
-
-        Pattern r = Pattern.compile(regx);
-        Matcher m = r.matcher(line);
-
-        if (m.find()) {
-            System.out.println("Found value: " + m.group(0));
-        } else {
-            System.out.println("NO MATCH");
+    /**
+     * mapping the gender
+     * 
+     * @param gender
+     * @return
+     */
+    private Integer mappingGender(Map<String, Object> map) {
+        String gender = (String) map.get(GENDER);
+        if (StringUtils.isBlank(gender)) {
+            return null;
+        }
+        switch (gender) {
+        case "ÄÐ":
+            return 1;
+        case "Å®":
+            return 2;
+        case "Î´Öª":
+            return 0;
+        default:
+            return null;
         }
     }
+
 }
