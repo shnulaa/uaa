@@ -26,6 +26,7 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
     private static final long serialVersionUID = 4420811822143285776L;
 
     private static final String GENDER = "gender";
+    private static final String SEX = "sex";
 
     /**
      * the default constructor
@@ -67,7 +68,7 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
         if (map == null || map.isEmpty()) {
             return null;
         }
-        map.put("gender", mappingGender(map));
+        map.put(SEX, mappingGender(map));
         return map;
     }
 
@@ -92,5 +93,4 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
             return null;
         }
     }
-
 }
