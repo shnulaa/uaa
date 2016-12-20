@@ -34,6 +34,23 @@ public class UaaPrincipal implements Principal, Serializable {
     private final String externalId;
     private final String zoneId;
 
+    private Integer sex; // 性别
+    private String userPic; // 用户头像
+    
+    public UaaPrincipal withExternalInfo(Integer sex, String userPic) {
+        this.sex = sex;
+        this.userPic = userPic;
+        return this;
+    }
+    
+    public Integer getSex() {
+        return sex;
+    }
+
+    public String getUserPic() {
+        return userPic;
+    }
+
     public UaaPrincipal(UaaUser user) {
         this(
             user.getId(),

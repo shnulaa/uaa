@@ -15,6 +15,12 @@
 
 package org.cloudfoundry.identity.uaa.authentication.manager;
 
+import java.util.Date;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -23,6 +29,7 @@ import org.cloudfoundry.identity.uaa.authentication.UaaAuthentication;
 import org.cloudfoundry.identity.uaa.authentication.UaaAuthenticationDetails;
 import org.cloudfoundry.identity.uaa.authentication.UaaPrincipal;
 import org.cloudfoundry.identity.uaa.authentication.event.UserAuthenticationSuccessEvent;
+import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthAuthenticationManager.AuthenticationData;
 import org.cloudfoundry.identity.uaa.user.DialableByPhone;
 import org.cloudfoundry.identity.uaa.user.ExternallyIdentifiable;
 import org.cloudfoundry.identity.uaa.user.Mailable;
@@ -47,13 +54,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-
-public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> implements AuthenticationManager, ApplicationEventPublisherAware, BeanNameAware {
+public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails>
+        implements AuthenticationManager, ApplicationEventPublisherAware, BeanNameAware {
 
     protected final Log logger = LogFactory.getLog(getClass());
 
@@ -79,7 +81,8 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
     }
 
     /**
-     * @param userDatabase the userDatabase to set
+     * @param userDatabase
+     *            the userDatabase to set
      */
     public void setUserDatabase(UaaUserDatabase userDatabase) {
         this.userDatabase = userDatabase;
@@ -108,7 +111,8 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
         // Register new users automatically
         if (userFromDb == null) {
             if (!isAddNewShadowUser()) {
-                throw new AccountNotPreCreatedException("The user account must be pre-created. Please contact your system administrator.");
+                throw new AccountNotPreCreatedException(
+                        "The user account must be pre-created. Please contact your system administrator.");
             }
             publish(new NewUserAuthenticatedEvent(userFromRequest));
             try {
@@ -118,7 +122,7 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
             }
         }
 
-        //user is authenticated and exists in UAA
+        // user is authenticated and exists in UAA
         UaaUser user = userAuthenticated(request, userFromRequest, userFromDb);
 
         UaaAuthenticationDetails uaaAuthenticationDetails;
@@ -127,13 +131,22 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
         } else {
             uaaAuthenticationDetails = UaaAuthenticationDetails.UNKNOWN;
         }
-        UaaAuthentication success = new UaaAuthentication(new UaaPrincipal(user), user.getAuthorities(), uaaAuthenticationDetails);
+
+        final UaaPrincipal uaaPrincipal = new UaaPrincipal(user);
+        if (authenticationData instanceof AuthenticationData) {
+            AuthenticationData data = (AuthenticationData) authenticationData;
+            uaaPrincipal.withExternalInfo(data.getSex(), data.getUserPic());
+        }
+
+        UaaAuthentication success = new UaaAuthentication(uaaPrincipal, user.getAuthorities(),
+                uaaAuthenticationDetails);
         populateAuthenticationAttributes(success, request, authenticationData);
         publish(new UserAuthenticationSuccessEvent(user, success));
         return success;
     }
 
-    protected void populateAuthenticationAttributes(UaaAuthentication authentication, Authentication request, ExternalAuthenticationDetails authenticationData) {
+    protected void populateAuthenticationAttributes(UaaAuthentication authentication, Authentication request,
+            ExternalAuthenticationDetails authenticationData) {
         if (request.getPrincipal() instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) request.getPrincipal();
             authentication.setUserAttributes(getUserAttributes(userDetails));
@@ -182,7 +195,8 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
             logger.debug(this.getClass().getName() + "[" + name + "] cannot process null principal");
             return null;
         } else {
-            logger.debug(this.getClass().getName() + "[" + name + "] cannot process request of type: " + request.getClass().getName());
+            logger.debug(this.getClass().getName() + "[" + name + "] cannot process request of type: "
+                    + request.getClass().getName());
             return null;
         }
 
@@ -209,22 +223,15 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
             familyName = names.getFamilyName();
         }
 
-        String phoneNumber = (userDetails instanceof DialableByPhone) ? ((DialableByPhone) userDetails).getPhoneNumber() : null;
-        String externalId = (userDetails instanceof ExternallyIdentifiable) ? ((ExternallyIdentifiable) userDetails).getExternalId() : name;
+        String phoneNumber = (userDetails instanceof DialableByPhone) ? ((DialableByPhone) userDetails).getPhoneNumber()
+                : null;
+        String externalId = (userDetails instanceof ExternallyIdentifiable)
+                ? ((ExternallyIdentifiable) userDetails).getExternalId() : name;
 
-        UaaUserPrototype userPrototype = new UaaUserPrototype()
-                .withUsername(name)
-                .withPassword("")
-                .withEmail(email)
-                .withAuthorities(UaaAuthority.USER_AUTHORITIES)
-                .withGivenName(givenName)
-                .withFamilyName(familyName)
-                .withCreated(new Date())
-                .withModified(new Date())
-                .withOrigin(origin)
-                .withExternalId(externalId)
-                .withZoneId(IdentityZoneHolder.get().getId())
-                .withPhoneNumber(phoneNumber);
+        UaaUserPrototype userPrototype = new UaaUserPrototype().withUsername(name).withPassword("").withEmail(email)
+                .withAuthorities(UaaAuthority.USER_AUTHORITIES).withGivenName(givenName).withFamilyName(familyName)
+                .withCreated(new Date()).withModified(new Date()).withOrigin(origin).withExternalId(externalId)
+                .withZoneId(IdentityZoneHolder.get().getId()).withPhoneNumber(phoneNumber);
 
         return new UaaUser(userPrototype);
     }
@@ -248,8 +255,10 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails> i
     }
 
     protected boolean haveUserAttributesChanged(UaaUser existingUser, UaaUser user) {
-        if (!StringUtils.equals(existingUser.getGivenName(), user.getGivenName()) || !StringUtils.equals(existingUser.getFamilyName(), user.getFamilyName()) ||
-            !StringUtils.equals(existingUser.getPhoneNumber(), user.getPhoneNumber()) || !StringUtils.equals(existingUser.getEmail(), user.getEmail())) {
+        if (!StringUtils.equals(existingUser.getGivenName(), user.getGivenName())
+                || !StringUtils.equals(existingUser.getFamilyName(), user.getFamilyName())
+                || !StringUtils.equals(existingUser.getPhoneNumber(), user.getPhoneNumber())
+                || !StringUtils.equals(existingUser.getEmail(), user.getEmail())) {
             return true;
         }
         return false;

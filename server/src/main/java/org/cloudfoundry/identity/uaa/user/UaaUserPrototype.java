@@ -46,6 +46,10 @@ public final class UaaUserPrototype {
     private Date passwordLastModified;
 
     private String zoneId;
+    
+    private String sex;
+
+    private String userPic;
 
     private List<? extends GrantedAuthority> authorities;
 
@@ -190,6 +194,24 @@ public final class UaaUserPrototype {
 
     public boolean isVerified() {
         return verified;
+    }
+    
+    public String getSex() {
+        return sex;
+    }
+
+    public UaaUserPrototype withSex(String sex) {
+        this.sex = sex;
+        return this;
+    }
+
+    public String getUserPic() {
+        return userPic;
+    }
+
+    public UaaUserPrototype withUserPic(String userPic) {
+        this.userPic = userPic;
+        return this;
     }
 
     public UaaUserPrototype withVerified(boolean verified) {
