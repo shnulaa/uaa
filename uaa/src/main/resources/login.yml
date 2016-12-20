@@ -82,7 +82,7 @@ login:
         attributeMappings:
           user_name: openId
           external_id: openId
-          sex: gender
+          sex: sex
           user_pic: figureurl_qq_1
           nick_name: nickname
       weixin:
