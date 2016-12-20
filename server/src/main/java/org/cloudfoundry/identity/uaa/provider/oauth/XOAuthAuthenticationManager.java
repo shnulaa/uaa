@@ -19,6 +19,7 @@ import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDef
 import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.EXTERNAL_ID_ATTRIBUTE_NAME;
 import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.SEX_ATTRIBUTE_NAME;
 import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.USER_PIC_ATTRIBUTE_NAME;
+import static org.cloudfoundry.identity.uaa.provider.ExternalIdentityProviderDefinition.NICK_NAME_ATTRIBUTE_NAME;
 import static org.cloudfoundry.identity.uaa.util.TokenValidation.validate;
 import static org.cloudfoundry.identity.uaa.util.UaaHttpRequestUtils.getNoValidatingClientHttpRequestFactory;
 
@@ -112,22 +113,32 @@ public class XOAuthAuthenticationManager
             }
             authenticationData.setUsername(username);
 
+            // externalId mapping
             String externalIdAttributePrefix = (String) attributeMappings.get(EXTERNAL_ID_ATTRIBUTE_NAME);
             if (StringUtils.hasText(externalIdAttributePrefix)) {
                 String externalId = (String) claims.get(externalIdAttributePrefix);
                 authenticationData.setExternalId(externalId);
             }
 
+            // sex mapping
             String sexAttributePrefix = (String) attributeMappings.get(SEX_ATTRIBUTE_NAME);
             if (StringUtils.hasText(sexAttributePrefix)) {
                 Integer sex = (Integer) claims.get(sexAttributePrefix);
                 authenticationData.setSex(sex);
             }
 
+            // userPIc mapping
             String userPIcAttributePrefix = (String) attributeMappings.get(USER_PIC_ATTRIBUTE_NAME);
             if (StringUtils.hasText(userPIcAttributePrefix)) {
                 String userPic = (String) claims.get(userPIcAttributePrefix);
                 authenticationData.setUserPic(userPic);
+            }
+            
+            // nickname mapping
+            String nickNameAttributePrefix = (String) attributeMappings.get(NICK_NAME_ATTRIBUTE_NAME);
+            if (StringUtils.hasText(nickNameAttributePrefix)) {
+                String nickName = (String) claims.get(nickNameAttributePrefix);
+                authenticationData.setNickName(nickName);
             }
 
             authenticationData.setAuthorities(extractXOAuthUserAuthorities(attributeMappings, claims));
@@ -358,6 +369,7 @@ public class XOAuthAuthenticationManager
         private String externalId;
         private Integer sex;
         private String userPic;
+        private String nickName;
 
         public void setClaims(Map<String, Object> claims) {
             this.claims = claims;
@@ -405,6 +417,14 @@ public class XOAuthAuthenticationManager
 
         public void setUserPic(String userPic) {
             this.userPic = userPic;
+        }
+
+        public String getNickName() {
+            return nickName;
+        }
+
+        public void setNickName(String nickName) {
+            this.nickName = nickName;
         }
     }
 }

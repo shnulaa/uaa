@@ -2,6 +2,7 @@ package org.cloudfoundry.identity.uaa.provider.oauth.ext;
 
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.cloudfoundry.identity.uaa.provider.AbstractXOAuthIdentityProviderDefinition;
 import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
 import org.cloudfoundry.identity.uaa.provider.oauth.XOAuthCodeToken;
@@ -23,6 +24,8 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
      * serialVersionUID
      */
     private static final long serialVersionUID = 4420811822143285776L;
+
+    private static final String GENDER = "gender";
 
     /**
      * the default constructor
@@ -59,7 +62,35 @@ public class WeiBoClaimsFetcher extends AbstractClaimsFetcher {
 
         HttpHeaders headers = new HttpHeaders();
         headers.add("Accept", "application/json");
-        return restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(), paras, headers);
+        Map<String, Object> map = restHttp(HttpMethod.GET, config.isSkipSslValidation(), config.getIssuer().toString(),
+                paras, headers);
+        if (map == null || map.isEmpty()) {
+            return null;
+        }
+        map.put("gender", mappingGender(map));
+        return map;
+    }
+
+    /**
+     * mapping the gender
+     * @param gender
+     * @return
+     */
+    private Integer mappingGender(Map<String, Object> map) {
+        String gender = (String) map.get(GENDER);
+        if (StringUtils.isBlank(gender)) {
+            return null;
+        }
+        switch (gender) {
+        case "m":
+            return 1;
+        case "f":
+            return 2;
+        case "u":
+            return 0;
+        default:
+            return null;
+        }
     }
 
 }

@@ -34,15 +34,24 @@ public class UaaPrincipal implements Principal, Serializable {
     private final String externalId;
     private final String zoneId;
 
-    private Integer sex; // 性别
-    private String userPic; // 用户头像
-    
-    public UaaPrincipal withExternalInfo(Integer sex, String userPic) {
+    private Integer sex; // sex
+    private String userPic; // user image
+    private String nickName; // nick name
+
+    /**
+     * 
+     * @param sex
+     * @param userPic
+     * @param nickName
+     * @return
+     */
+    public UaaPrincipal withExternalInfo(Integer sex, String userPic, String nickName) {
         this.sex = sex;
         this.userPic = userPic;
+        this.nickName = nickName;
         return this;
     }
-    
+
     public Integer getSex() {
         return sex;
     }
@@ -51,25 +60,19 @@ public class UaaPrincipal implements Principal, Serializable {
         return userPic;
     }
 
+    public String getNickName() {
+        return nickName;
+    }
+
     public UaaPrincipal(UaaUser user) {
-        this(
-            user.getId(),
-            user.getUsername(),
-            user.getEmail(),
-            user.getOrigin(),
-            user.getExternalId(),
-            user.getZoneId()
-        );
+        this(user.getId(), user.getUsername(), user.getEmail(), user.getOrigin(), user.getExternalId(),
+                user.getZoneId());
     }
 
     @JsonCreator
-    public UaaPrincipal(
-        @JsonProperty("id") String id,
-        @JsonProperty("name") String username,
-        @JsonProperty("email") String email,
-        @JsonProperty("origin") String origin,
-        @JsonProperty("externalId") String externalId,
-        @JsonProperty("zoneId") String zoneId) {
+    public UaaPrincipal(@JsonProperty("id") String id, @JsonProperty("name") String username,
+            @JsonProperty("email") String email, @JsonProperty("origin") String origin,
+            @JsonProperty("externalId") String externalId, @JsonProperty("zoneId") String zoneId) {
         this.id = id;
         this.name = username;
         this.email = email;
@@ -91,16 +94,21 @@ public class UaaPrincipal implements Principal, Serializable {
         return email;
     }
 
-    public String getOrigin() { return origin; }
+    public String getOrigin() {
+        return origin;
+    }
 
-    public String getExternalId() { return externalId; }
+    public String getExternalId() {
+        return externalId;
+    }
 
-    public String getZoneId() { return zoneId; }
+    public String getZoneId() {
+        return zoneId;
+    }
 
     /**
      * Returns {@code true} if the supplied object is a {@code UAAPrincipal}
-     * instance with the
-     * same {@code id} value.
+     * instance with the same {@code id} value.
      * <p>
      * In other words, the objects are equal if they have the same user id,
      * representing the same principal.

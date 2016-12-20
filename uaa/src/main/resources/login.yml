@@ -81,6 +81,10 @@ login:
         skipSslValidation: false
         attributeMappings:
           user_name: openId
+          external_id: openId
+          sex: gender
+          user_pic: figureurl_qq_1
+          nick_name: nickname
       weixin:
         type: oidc1.0
         authUrl: https://open.weixin.qq.com/connect/qrconnect
@@ -98,6 +102,9 @@ login:
         attributeMappings:
           user_name: unionid
           external_id: openid
+          sex: sex
+          user_pic: headimgurl
+          nick_name: nickname
       weibo:
         type: oidc1.0
         authUrl: https://api.weibo.com/oauth2/authorize
@@ -115,6 +122,9 @@ login:
         attributeMappings:
           user_name: idstr
           external_id: idstr
+          sex: sex
+          user_pic: profile_image_url
+          nick_name: screen_name
       weimeng:
         type: oidc1.0
         authUrl: https://dopen.weimob.com/fuwu/b/oauth2/authorize
@@ -132,6 +142,8 @@ login:
         attributeMappings:
           user_name: pid
           external_id: pid
+          user_pic: avatarUrl
+          nick_name: name
   # Enable create account and forgot password links on the Login Server (enabled by default)
   #selfServiceLinksEnabled: true
   #base URL that the login server can be reached at

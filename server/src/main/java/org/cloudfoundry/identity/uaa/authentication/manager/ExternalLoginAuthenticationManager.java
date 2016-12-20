@@ -135,7 +135,7 @@ public class ExternalLoginAuthenticationManager<ExternalAuthenticationDetails>
         final UaaPrincipal uaaPrincipal = new UaaPrincipal(user);
         if (authenticationData instanceof AuthenticationData) {
             AuthenticationData data = (AuthenticationData) authenticationData;
-            uaaPrincipal.withExternalInfo(data.getSex(), data.getUserPic());
+            uaaPrincipal.withExternalInfo(data.getSex(), data.getUserPic(), data.getNickName());
         }
 
         UaaAuthentication success = new UaaAuthentication(uaaPrincipal, user.getAuthorities(),
