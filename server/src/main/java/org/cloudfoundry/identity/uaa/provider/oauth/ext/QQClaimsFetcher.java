@@ -36,6 +36,10 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
     private static final String GENDER = "gender";
     private static final String SEX = "sex";
 
+    private static final String MALE = "男";
+    private static final String FEMALE = "女";
+    private static final String UNKNOWN = "未知";
+
     /**
      * the default constructor
      * 
@@ -135,11 +139,11 @@ public class QQClaimsFetcher extends AbstractClaimsFetcher {
             return null;
         }
         switch (gender) {
-        case "��":
+        case MALE:
             return 1;
-        case "Ů":
+        case FEMALE:
             return 2;
-        case "δ֪":
+        case UNKNOWN:
             return 0;
         default:
             return null;
