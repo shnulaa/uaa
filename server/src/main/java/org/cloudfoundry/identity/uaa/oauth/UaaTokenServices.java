@@ -578,7 +578,7 @@ public class UaaTokenServices implements AuthorizationServerTokenServices, Resou
         return response;
     }
     
-    private static final long SEC_REDUNDANCY = 1;
+    private static final long SEC_REDUNDANCY =5;
 
     @Override
     public OAuth2AccessToken createAccessToken(OAuth2Authentication authentication) throws AuthenticationException {
