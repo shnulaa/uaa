@@ -559,8 +559,8 @@ public class UaaTokenServices implements AuthorizationServerTokenServices, Resou
             response.put(REVOCATION_SIGNATURE, revocableHashSignature);
         }
 
-        response.put(IAT, System.currentTimeMillis() / 1000);
-        response.put(EXP, token.getExpiration().getTime() / 1000);
+        response.put(IAT, System.currentTimeMillis() / 1000 - SEC_REDUNDANCY);
+        response.put(EXP, token.getExpiration().getTime() / 1000 - SEC_REDUNDANCY);
 
         if (getTokenEndpoint() != null) {
             response.put(ISS, getTokenEndpoint());
@@ -577,6 +577,8 @@ public class UaaTokenServices implements AuthorizationServerTokenServices, Resou
 
         return response;
     }
+    
+    private static final long SEC_REDUNDANCY = 1;
 
     @Override
     public OAuth2AccessToken createAccessToken(OAuth2Authentication authentication) throws AuthenticationException {
@@ -880,9 +882,9 @@ public class UaaTokenServices implements AuthorizationServerTokenServices, Resou
             response.put(EXTERNAL_ATTR, externalAttributes);
         }
 
-        response.put(IAT, System.currentTimeMillis() / 1000);
+        response.put(IAT, System.currentTimeMillis() / 1000 - SEC_REDUNDANCY);
         if (((ExpiringOAuth2RefreshToken) token).getExpiration() != null) {
-            response.put(EXP, ((ExpiringOAuth2RefreshToken) token).getExpiration().getTime() / 1000);
+            response.put(EXP, ((ExpiringOAuth2RefreshToken) token).getExpiration().getTime() / 1000 - SEC_REDUNDANCY);
         }
 
         response.put(CID, clientId);
