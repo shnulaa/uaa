@@ -72,8 +72,8 @@
                             <entry key="secret" value="appclientsecret" />
                             <entry key="authorized-grant-types" value="password,implicit,authorization_code,client_credentials,refresh_token" />
                             <entry key="scope"
-                                value="cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme,scim.read,scim.write" />
-                            <entry key="authorities" value="uaa.resource" />
+                                value="cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme" />
+                            <entry key="authorities" value="scim.read,scim.write" />
                             <entry key="autoapprove">
                                 <list>
                                     <value>openid</value>
@@ -89,8 +89,8 @@
                             <entry key="secret" value="BuQycvfxYXNELbrd" />
                             <entry key="authorized-grant-types" value="password,implicit,authorization_code,client_credentials,refresh_token" />
                             <entry key="scope"
-                                value="cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme,scim.read,scim.write" />
-                            <entry key="authorities" value="uaa.resource" />
+                                value="cloud_controller.read,cloud_controller.write,openid,password.write,scim.userids,organizations.acme" />
+                            <entry key="authorities" value="scim.read,scim.write" />
                             <entry key="autoapprove">
                                 <list>
                                     <value>openid</value>
