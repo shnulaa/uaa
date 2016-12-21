@@ -103,7 +103,7 @@ public class UaaUser {
     public UaaUser(UaaUserPrototype prototype) {
         Assert.hasText(prototype.getId(), "Id cannot be null");
         Assert.hasText(prototype.getUsername(), "Username cannot be empty");
-        Assert.hasText(prototype.getEmail(), "Email is required");
+        //Assert.hasText(prototype.getEmail(), "Email is required");
 
         this.id = prototype.getId();
         this.username = prototype.getUsername();
