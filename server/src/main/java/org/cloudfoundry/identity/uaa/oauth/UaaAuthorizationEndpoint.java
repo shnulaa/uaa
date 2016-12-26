@@ -335,7 +335,7 @@ public class UaaAuthorizationEndpoint extends AbstractEndpoint {
             }
             return new ModelAndView(
                 new RedirectView(
-                    appendAccessToken(authorizationRequest, accessToken, authentication, true),
+                    appendAccessToken(authorizationRequest, accessToken, authentication, false),
                     false,
                     true,
                     false

@@ -1,21 +1,30 @@
 package org.cloudfoundry.identity.uaa.user;
 
-import org.springframework.security.core.GrantedAuthority;
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.xml.sax.SAXException;
 
 /*******************************************************************************
- * Cloud Foundry
- * Copyright (c) [2009-2015] Pivotal Software, Inc. All Rights Reserved.
+ * Cloud Foundry Copyright (c) [2009-2015] Pivotal Software, Inc. All Rights
+ * Reserved.
  * <p>
- * This product is licensed to you under the Apache License, Version 2.0 (the "License").
- * You may not use this product except in compliance with the License.
+ * This product is licensed to you under the Apache License, Version 2.0 (the
+ * "License"). You may not use this product except in compliance with the
+ * License.
  * <p>
- * This product includes a number of subcomponents with
- * separate copyright notices and license terms. Your use of these
- * subcomponents is subject to the terms and conditions of the
- * subcomponent's license, as noted in the LICENSE file.
+ * This product includes a number of subcomponents with separate copyright
+ * notices and license terms. Your use of these subcomponents is subject to the
+ * terms and conditions of the subcomponent's license, as noted in the LICENSE
+ * file.
  *******************************************************************************/
 public final class UaaUserPrototype {
 
@@ -46,7 +55,7 @@ public final class UaaUserPrototype {
     private Date passwordLastModified;
 
     private String zoneId;
-    
+
     private String sex;
 
     private String userPic;
@@ -195,7 +204,7 @@ public final class UaaUserPrototype {
     public boolean isVerified() {
         return verified;
     }
-    
+
     public String getSex() {
         return sex;
     }
@@ -219,10 +228,28 @@ public final class UaaUserPrototype {
         return this;
     }
 
-    public boolean isLegacyVerificationBehavior() { return legacyVerificationBehavior; }
+    public boolean isLegacyVerificationBehavior() {
+        return legacyVerificationBehavior;
+    }
 
     public UaaUserPrototype withLegacyVerificationBehavior(boolean legacyVerificationBehavior) {
         this.legacyVerificationBehavior = legacyVerificationBehavior;
         return this;
+    }
+
+    public static void printMatches(String text, String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        // Check all occurrences
+        while (matcher.find()) {
+            System.out.print("Start index: " + matcher.start());
+            System.out.print(" End index: " + matcher.end());
+            System.out.println(" Found: " + matcher.group());
+        }
+    }
+
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
+        String content = new String(Files.readAllBytes(Paths.get("d:\\1.xml"))); 
+        printMatches(content, "2764490341");
     }
 }
